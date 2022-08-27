@@ -1,0 +1,89 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "db/**/*"
+    - "bin/**/*"
+    - "node_modules/**/*"
+    - "config/**/*"
+  DisplayCopNames: true
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: false
+
+Layout/MultilineBlockLayout:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'Gemfile'
+    - 'config/**/*'
+    - 'spec/**/*_spec.rb'
+
+Metrics/ClassLength:
+  CountComments: false
+  Max: 300
+
+Metrics/CyclomaticComplexity:
+  Max: 30
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 30
+
+Naming/AccessorMethodName:
+  Exclude:
+    - 'app/controllers/**/*'
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/WhileUntilModifier:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+
+Bundler/OrderedGems:
+  Enabled: false
