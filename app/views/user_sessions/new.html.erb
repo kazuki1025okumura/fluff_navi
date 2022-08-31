@@ -1,0 +1,31 @@
+<div class="w-full h-screen font-sans bg-cover bg-landscape">
+  <div class="container flex items-center justify-center flex-1 h-full mx-auto">
+    <div class="w-full max-w-lg">
+      <div class="leading-loose">
+        <%= form_with url: login_path, class: 'max-w-sm p-10 m-auto bg-white bg-opacity-25 rounded shadow-xl', local: true do |f| %>
+          <p class="mb-8 text-2xl font-light text-center text-black">
+            <%= t('.title') %>
+          </p>
+          <div class="mb-4 flex-1">
+            <div class="pt-5 pb-3">
+              <%= f.label :email, User.human_attribute_name(:email) %>
+            </div>
+            <%= f.text_field :email, class: 'input input-bordered input-info w-full max-w-xs' %>
+          </div>
+          <div class="mb-4 flex-1">
+            <div class="pt-5 pb-3">
+              <%= f.label :password, User.human_attribute_name(:password) %>
+            </div>
+            <%= f.text_field :password, class: 'input input-bordered input-info w-full max-w-xs' %>
+          </div>
+          <div class="actions flex items-center justify-between mt-4">
+            <%= f.submit (t 'defaults.login'), type: 'submit', class: 'py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
+          </div>
+        <% end %>
+        <div class='text-center'>
+          <%= link_to (t '.to_register_page'), new_user_path, class: 'text-indigo-400' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
