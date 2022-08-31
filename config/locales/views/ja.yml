@@ -8,8 +8,17 @@ ja:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
+      login_button_message: 'アカウントを登録します'
+    create:
+      success: 'ユーザー登録が完了しました'
+      error: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      error: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
