@@ -22,3 +22,7 @@ ja:
       error: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  facilities:
+    index:
+      title: '施設一覧'
+      no_result: '施設が見つかりませんでした'
