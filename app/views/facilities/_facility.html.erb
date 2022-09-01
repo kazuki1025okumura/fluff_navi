@@ -1,0 +1,15 @@
+<div class="card card-side bg-base-100 shadow-xl">
+  <figure><%= image_tag 'no_image.jpg'%></figure>
+  <div class="card-body">
+    <h2 class="card-title"><%= facility.name %></h2>
+    <br>
+    <br>
+    <b>営業時間</b>
+    <p><%= facility.opening_hours %></p>
+    <b>定休日</b>
+    <p><%= facility.close_day %></p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">詳細を見る</button>
+    </div>
+  </div>
+</div>
