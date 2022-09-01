@@ -1,2 +1,53 @@
-<h1>Facities#show</h1>
-<p>Find me in app/views/facities/show.html.erb</p>
+<div class="max-w-screen-md grid sm:grid-cols-2 mx-auto">
+  <div class="sm:col-span-2 p-3.5 items-center text-center">
+    <div class="container mx-auto mt-24 py-5 px-5 md:px-20">
+      <h1 id="facility-title" class="mb-8 text-2xl font-light text-center text-black">
+        <%= @facility.name %>
+      </h1>
+      <table class="table-fixed">
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2">説明</td>
+            <td class="border px-4 py-2"><%= @facility.description %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">定休日</td>
+            <td class="border px-4 py-2"><%= @facility.close_day %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">営業時間</td>
+            <td class="border px-4 py-2"><%= @facility.opening_hours %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">電話番号</td>
+            <td class="border px-4 py-2"><%= @facility.tel_number %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">住所</td>
+            <td class="border px-4 py-2"><%= @facility.address %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">アクセス</td>
+            <td class="border px-4 py-2"><%= @facility.access %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">駐車場</td>
+            <td class="border px-4 py-2"><%= @facility.parking %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">料金</td>
+            <td class="border px-4 py-2"><%= @facility.price %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">ホームページ</td>
+            <td class="border px-4 py-2"><%= @facility.web_site %></td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">備考</td>
+            <td class="border px-4 py-2"><%= @facility.remarks %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
