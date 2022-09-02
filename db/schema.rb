@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_02_054936) do
+ActiveRecord::Schema.define(version: 2022_09_02_060523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 2022_09_02_054936) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "facility_categories", force: :cascade do |t|
+    t.bigint "facility_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_facility_categories_on_category_id"
+    t.index ["facility_id", "category_id"], name: "index_facility_categories_on_facility_id_and_category_id", unique: true
+    t.index ["facility_id"], name: "index_facility_categories_on_facility_id"
+  end
+
   create_table "managements", force: :cascade do |t|
     t.bigint "facility_id", null: false
     t.bigint "animal_id", null: false
@@ -67,6 +77,8 @@ ActiveRecord::Schema.define(version: 2022_09_02_054936) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "facility_categories", "categories"
+  add_foreign_key "facility_categories", "facilities"
   add_foreign_key "managements", "animals"
   add_foreign_key "managements", "facilities"
 end
