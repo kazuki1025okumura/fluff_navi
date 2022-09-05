@@ -4,7 +4,7 @@
   position: relative;
   background-position: center;
 
-  .top-inner-text {
+  .top-title {
     position: absolute;
     top: 58%;
     left: 50%;
@@ -15,7 +15,7 @@
     color: rgb(228, 43, 133);
 
     @media screen and (max-width: 767px) {
-      font-size: 2.0rem;
+      font-size: 4.0rem;
     }
   }
 
@@ -23,5 +23,32 @@
     position: absolute;
     top: 80%;
     left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.top-wrapper-animal {
+  height: calc(100vh - 700px);
+  position: relative;
+  background-position: center;
+
+  .animal-search-title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .search-facility-animal {
+    position: absolute;
+    top: 70%;
+    left: 41%
+  }
+
+  .allow-size {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
