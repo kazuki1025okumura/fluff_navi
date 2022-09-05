@@ -1,18 +1,18 @@
-<div class="w-full">
-  <div class="relative">
+
+  <div class="w-full container mx-auto justify-center align-center">
     <div class="flex">
       <%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
-          <div class="mb-1">
-            <%= f.select :category_id, Category.pluck(:name, :id), { include_blank: '施設ジャンル' }, class: 'select select-info' %>
-            <%= f.select :prefecture_id, Prefecture.pluck(:name, :id), { include_blank: '都道府県' }, class: 'select select-info' %>
-          </div>
-          <div class="mb-1 input input-bordered input-info">
-            <%= f.search_field :name, placeholder: '地名 施設名 キーワード' %>
-          </div>
+        <div class="mb-1">
+          <%= f.select :category_id, Category.pluck(:name, :id), { include_blank: '施設ジャンル' }, class: 'select select-info' %>
+          <%= f.select :prefecture_id, Prefecture.pluck(:name, :id), { include_blank: '都道府県' }, class: 'select select-info' %>
+        </div>
+        <div class="mb-1 input input-bordered input-info">
+          <%= f.search_field :name, placeholder: '地名 施設名 キーワード' %>
+        </div>
         <div class="text-center ">
           <%= f.submit '検索', class: 'btn btn-sm btn-outline btn-info bg-gray-50 ' %>
         </div>
       <% end %>
     </div>
   </div>
-</div>
+
