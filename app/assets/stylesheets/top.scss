@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 .top-wrapper {
   background-image: image-url("top.jpg");
   height: calc(100vh - 134px);
@@ -6,22 +8,44 @@
 
   .top-title {
     position: absolute;
-    top: 58%;
+    top: 9%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
-    font-size: 5rem;
-    color: rgb(228, 43, 133);
+    font-size: 7rem;
+    color: rgb(255, 11, 129);
+    font-family: 'Itim', cursive;
 
     @media screen and (max-width: 767px) {
       font-size: 4.0rem;
     }
   }
 
+  .top-desc {
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    text-align: center;
+    color: rgb(255, 0, 153)
+  }
+
+  .top-message {
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 23px;
+    text-align: center;
+    color: rgb(49, 49, 49);
+    background-color: rgb(241, 255, 253)
+  }
+
   .search-facility {
     position: absolute;
-    top: 80%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
