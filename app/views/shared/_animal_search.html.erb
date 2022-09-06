@@ -11,8 +11,8 @@
               <%= f.select :animal_id, Animal.pluck(:name, :id), { include_blank: '動物を選択' }, class: 'select select-info' %>
               <%= f.select :prefecture_id, Prefecture.pluck(:name, :id), { include_blank: '都道府県' }, class: 'select select-info' %>
             </div>
-            <div class="mb-1 input input-bordered input-info">
-              <%= f.search_field :name, placeholder: '地名 施設名 キーワード' %>
+            <div class="mb-1">
+              <%= f.search_field :name, placeholder: '地名 施設名 キーワード', class: ' input input-bordered input-info' %>
             </div>
             <div class="text-center ">
               <%= f.submit '検索', class: 'btn btn-sm btn-outline btn-info bg-gray-50 ' %>
