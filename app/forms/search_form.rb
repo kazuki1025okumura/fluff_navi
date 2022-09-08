@@ -10,7 +10,7 @@ class SearchForm
   attribute :animal_id, :integer
 
   def search
-    relation = Facility.distinct
+    relation = Facility.distinct.includes(:managements, :animals, :facility_categories, :categories)
 
     relation = relation.by_prefecture(prefecture_id) if prefecture_id.present?
     relation = relation.by_category(category_id) if category_id.present?
