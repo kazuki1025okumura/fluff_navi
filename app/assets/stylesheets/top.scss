@@ -69,6 +69,13 @@
     left: 41%
   }
 
+
+  // 動物から検索のモーダルの中の表示
+  .set-1.relative {
+    display: flex;
+    justify-content: center;
+  }
+
   .allow-size {
     position: absolute;
     top: 50%;
