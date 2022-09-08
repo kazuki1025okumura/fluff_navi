@@ -4,6 +4,8 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     sign_up: '新規登録'
+    message:
+      require_login: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
@@ -26,3 +28,15 @@ ja:
     index:
       title: '施設一覧'
       no_result: '施設が見つかりませんでした'
+    show:
+      title: '施設詳細'
+    bookmarks:
+      title: 'お気に入り一覧'
+      no_result: 'お気に入りに登録している施設はありません'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+      success: 'プロフィールを編集しました'
+      error: 'プロフィール編集に失敗しました'
