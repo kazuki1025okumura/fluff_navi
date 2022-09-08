@@ -1,0 +1,10 @@
+<div class="mx-auto px-4 sm:px-8 max-w-3xl">
+  <p class="mb-8 text-4xl text-center text-black">
+    <%= t('.title') %>
+  </p>
+  <% if @bookmark_facility.present? %>
+    <%= render @bookmark_facility %>
+  <% else %>
+    <p><%= t('.no_result') %></p>
+  <% end %>
+</div>

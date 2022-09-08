@@ -4,6 +4,7 @@
       <h1 id="facility-title" class="mb-8 text-2xl font-light text-center text-black">
         <%= @facility.name %>
       </h1>
+      <%= render 'bookmark_button', { facility: @facility } %>
       <h2 class="mb-8 text-2xl font-light text-center text-black">
         <% @facility.categories.each do |category| %>
           <%= category.name %>
