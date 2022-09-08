@@ -9,6 +9,10 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
   end
 
+  def bookmarks
+    @bookmark_facility = current_user.facilities.includes(:users).order(created_at: :desc)
+  end
+
   private
 
   def search_params

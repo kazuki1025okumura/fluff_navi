@@ -2,10 +2,18 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
-      facilities: '施設'
+      facility: '施設'
+      animal: '動物'
+      category: '施設カテゴリー'
+      bookmark: 'お気に入り'
+      profile: 'プロフィール'
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         name: 'ニックネーム'
+      facility:
+        name: '施設名'
+      animal:
+        name: '動物名'

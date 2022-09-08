@@ -9,6 +9,7 @@
     "@rails/webpacker": "5.4.3",
     "autoprefixer": "^9",
     "daisyui": "^2.24.0",
+    "jquery": "^3.6.1",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "turbolinks": "^5.2.0",
