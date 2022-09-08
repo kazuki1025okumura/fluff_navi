@@ -4,10 +4,15 @@
       <h1 id="facility-title" class="mb-8 text-2xl font-light text-center text-black">
         <%= @facility.name %>
       </h1>
-      <table class="table-fixed">
+      <h2 class="mb-8 text-2xl font-light text-center text-black">
+        <% @facility.categories.each do |category| %>
+          <%= category.name %>
+        <% end %>
+      </h2>
+      <table class="table-fixed mb-8 text-2xl font-light text-center text-black">
         <tbody>
           <tr>
-            <td class="border px-4 py-2">説明</td>
+            <td class="border px-4 py-2">施設紹介</td>
             <td class="border px-4 py-2"><%= @facility.description %></td>
           </tr>
           <tr>
@@ -26,14 +31,7 @@
             <td class="border px-4 py-2">住所</td>
             <td class="border px-4 py-2"><%= @facility.address %></td>
           </tr>
-          <tr>
-            <td class="border px-4 py-2">アクセス</td>
-            <td class="border px-4 py-2"><%= @facility.access %></td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">駐車場</td>
-            <td class="border px-4 py-2"><%= @facility.parking %></td>
-          </tr>
+          
           <tr>
             <td class="border px-4 py-2">料金</td>
             <td class="border px-4 py-2"><%= @facility.price %></td>
@@ -42,9 +40,19 @@
             <td class="border px-4 py-2">ホームページ</td>
             <td class="border px-4 py-2"><%= @facility.web_site %></td>
           </tr>
+          <% if @facility.remarks.present? %>
           <tr>
             <td class="border px-4 py-2">備考</td>
             <td class="border px-4 py-2"><%= @facility.remarks %></td>
+          </tr>
+          <% end %>
+          <tr>
+            <td class="border px-4 py-2">動物</td>
+            <td class="border px-4 py-2">
+              <% @facility.animals.each do |animal| %>
+                <%= animal.name %>
+              <% end %>
+            </td>
           </tr>
         </tbody>
       </table>
