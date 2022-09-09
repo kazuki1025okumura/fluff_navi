@@ -4,8 +4,12 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     sign_up: '新規登録'
+    edit: '編集'
+    destroy: '削除'
     message:
       require_login: 'ログインしてください'
+      updated: 'プロフィールを編集しました'
+      not_updated: 'プロフィールを編集できませんでした'
   users:
     new:
       title: 'ユーザー登録'
@@ -38,5 +42,6 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+      update: '更新する'
       success: 'プロフィールを編集しました'
       error: 'プロフィール編集に失敗しました'
