@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "stylesheets/application.css"
+import "custom/preview"
 require('jquery')
 
 Rails.start()
