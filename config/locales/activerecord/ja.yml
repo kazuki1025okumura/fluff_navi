@@ -6,13 +6,13 @@ ja:
       animal: '動物'
       category: '施設カテゴリー'
       bookmark: 'お気に入り'
-      profile: 'プロフィール'
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         name: 'ニックネーム'
+        avatar: 'プロフィール画像'
       facility:
         name: '施設名'
       animal:
