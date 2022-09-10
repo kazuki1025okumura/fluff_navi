@@ -4,7 +4,10 @@
       <h1 id="facility-title" class="mb-8 text-2xl font-light text-center text-black">
         <%= @facility.name %>
       </h1>
-      <%= render 'bookmark_button', { facility: @facility } %>
+      <% if logged_in? %>
+        <%= render 'bookmark_button', { facility: @facility } %>
+      <% else %>
+        <%= render 'before_login_bookmark' %>
       <h2 class="mb-8 text-2xl font-light text-center text-black">
         <% @facility.categories.each do |category| %>
           <%= category.name %>
