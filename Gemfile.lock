@@ -121,6 +121,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.0)
     ffi (1.15.5)
+    geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     gon (6.4.0)
@@ -367,6 +368,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  geocoder
   gon
   jbuilder (~> 2.7)
   listen (~> 3.3)
