@@ -7,6 +7,7 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+    gon.facility = @facility
   end
 
   def bookmarks
