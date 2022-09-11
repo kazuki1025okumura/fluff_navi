@@ -16,7 +16,7 @@
       <p><%= animal.name %></p>
     <% end %>
     <div class="card-actions justify-end">
-      <%= link_to facility_path(facility) do %>
+      <%= link_to facility_path(facility), data: { 'turbolinks': false } do %>
         <button class="btn btn-primary">詳細を見る</button>
       <% end %>
     </div>

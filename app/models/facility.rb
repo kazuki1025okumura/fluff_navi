@@ -11,6 +11,10 @@ class Facility < ApplicationRecord
 
   validates :name, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+  # 住所カラムに値が作成または更新された時、緯度経度に変換して緯度経度カラムに値を入れる
+
   scope :by_prefecture, ->(prefecture_id) { where(prefecture_id:) }
   # 上記の条件式は { where(prefecture_id: prefecture_id)} の省略形
 
