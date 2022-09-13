@@ -1,0 +1,10 @@
+<% posts.each do |post| %>
+  <div>
+    <div>
+      <%= image_tag post.image.url %>
+    </div>
+    <div>
+      <%= post.title %>
+    </div>
+</div>
+<% end %>

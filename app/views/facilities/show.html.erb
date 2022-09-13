@@ -4,11 +4,14 @@
       <h1 id="facility-title" class="mb-8 text-2xl font-light text-center text-black">
         <%= @facility.name %>
       </h1>
+      <div>
       <% if logged_in? %>
         <%= render 'bookmark_button', { facility: @facility } %>
       <% else %>
         <%= render 'before_login_bookmark' %>
       <% end %>
+      <%= link_to '写真を投稿する', new_facility_post_path(@facility) %>
+      </div>
       <h2 class="mb-8 text-2xl font-light text-center text-black">
         <% @facility.categories.each do |category| %>
           <%= category.name %>
@@ -66,6 +69,7 @@
         </tbody>
       </table>
       <div id="map" class="mx-auto justify-center"></div>
+      <%= render 'shared/posts', posts: @facility.posts %>
     </div>
   </div>
 </div>
@@ -73,7 +77,7 @@
 <style>
   #map {
     height: 500px;
-    width: 100%%;
+    width: 100%;
   }
 </style>
 
