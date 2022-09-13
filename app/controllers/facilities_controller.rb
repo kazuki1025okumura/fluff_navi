@@ -11,7 +11,7 @@ class FacilitiesController < ApplicationController
   end
 
   def bookmarks
-    @bookmark_facility = current_user.facilities.includes(:users).order(created_at: :desc)
+    @bookmark_facility = current_user.facilities.includes(%i[facility_categories categories managements animals]).order(created_at: :desc)
   end
 
   private
