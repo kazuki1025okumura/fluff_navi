@@ -8,6 +8,7 @@ class Facility < ApplicationRecord
   has_many :animals, through: :managements
   has_many :bookmarks, dependent: :destroy
   has_many :users, through: :bookmarks
+  has_many :posts, dependent: :destroy
 
   validates :name, presence: true
 

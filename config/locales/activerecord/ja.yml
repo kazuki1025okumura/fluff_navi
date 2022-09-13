@@ -6,6 +6,7 @@ ja:
       animal: '動物'
       category: '施設カテゴリー'
       bookmark: 'お気に入り'
+      post: '写真投稿'
     attributes:
       user:
         email: 'メールアドレス'
@@ -17,3 +18,6 @@ ja:
         name: '施設名'
       animal:
         name: '動物名'
+      post:
+        title: 'タイトル'
+        image: '画像'

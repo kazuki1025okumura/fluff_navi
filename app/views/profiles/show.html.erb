@@ -1,8 +1,6 @@
 <div class="container pt-3 center mx-auto justify-center text-center">
   <div class="row">
-    <button class="btn btn-outline float-right">
-      <%= link_to t('defaults.edit'), edit_profile_path %>
-    </button>
+    <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-outline float-right' %>
     <h3 class="text-5xl"><%= t('.title') %></h3>
     <div class="avatar">
       <div class="w-28 mask mask-squircle">
