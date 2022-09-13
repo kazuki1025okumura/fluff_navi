@@ -2,6 +2,27 @@
   margin: 20px;
 }
 
+#post-button:hover {
+  background-color: rgb(11, 83, 217);
+  border-color: rgb(11, 83, 217);
+}
+
 #facility-title {
   font-size: 40px;
 }
+
+#bm-button:hover {
+  background-color: rgb(255, 190, 225);
+  border-color: rgb(255, 190, 225);
+}
+
+#unbm-button:hover {
+  background-color: rgb(255, 154, 210);
+  border-color: rgb(255, 154, 210);
+}
+
+#unbm-button {
+  background-color: rgb(255, 96, 183);
+  border-color: rgb(255, 96, 183);
+}
+

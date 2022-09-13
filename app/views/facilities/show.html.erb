@@ -4,13 +4,13 @@
       <h1 id="facility-title" class="mb-8 text-2xl font-light text-center text-black">
         <%= @facility.name %>
       </h1>
-      <div>
-      <% if logged_in? %>
-        <%= render 'bookmark_button', { facility: @facility } %>
-      <% else %>
-        <%= render 'before_login_bookmark' %>
-      <% end %>
-      <%= link_to '写真を投稿する', new_facility_post_path(@facility) %>
+      <div class="flex max-auto justify-center mx-3">
+        <% if logged_in? %>
+          <%= render 'bookmark_button', { facility: @facility } %>
+        <% else %>
+          <%= render 'before_login_bookmark' %>
+        <% end %>
+        <%= link_to '写真を投稿する', new_facility_post_path(@facility), class: 'btn btn-info text-white', id: 'post-button' %>
       </div>
       <h2 class="mb-8 text-2xl font-light text-center text-black">
         <% @facility.categories.each do |category| %>

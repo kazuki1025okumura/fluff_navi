@@ -45,3 +45,11 @@ ja:
       update: '更新する'
       success: 'プロフィールを編集しました'
       error: 'プロフィール編集に失敗しました'
+  posts:
+    new:
+      title: '写真投稿'
+    create:
+      success: '投稿しました'
+      error: '投稿できませんでした'
+    destroy: '投稿を削除しました'
+
