@@ -1,4 +1,4 @@
-class AvatarUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   storage :file
 
@@ -7,7 +7,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    'default_avatar.png'
+    'no_image.jpg'
   end
 
   def extension_allowlist
