@@ -3,6 +3,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :bookmarks, dependent: :destroy
   has_many :facilities, through: :bookmarks, source: :facility
+  has_many :posts, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
