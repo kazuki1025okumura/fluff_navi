@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
+  namespace :admin do
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout',to: 'user_sessions#destroy'
+  end
+
   root to: 'home#index'
 
   get 'login', to: 'user_sessions#new'
