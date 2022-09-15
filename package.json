@@ -2,6 +2,7 @@
   "name": "fluff-navi",
   "private": true,
   "dependencies": {
+    "@activeadmin/activeadmin": "^2.13.1",
     "@fullhuman/postcss-purgecss": "2",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
