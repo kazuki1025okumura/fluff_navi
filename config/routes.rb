@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :facilities, only: %i[index show] do
     resources :posts, only: %i[new create show destroy], shallow: true
+    resources :reports, only: %i[new create], shallow: true
     collection do
       get :bookmarks
     end
