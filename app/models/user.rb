@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :facilities, through: :bookmarks
   has_many :posts, dependent: :destroy
   has_many :facility_posts, through: :posts, source: :facility
-  has_many :reports
+  has_many :reports, dependent: :nullify
   has_many :report_facilities, through: :reports, source: :facility
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
