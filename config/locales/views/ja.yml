@@ -52,4 +52,9 @@ ja:
       success: '投稿しました'
       error: '投稿できませんでした'
     destroy: '投稿を削除しました'
-
+  reports:
+    new:
+      title: '報告フォーム'
+    create:
+      success: '管理者へ報告が完了しました'
+      error: '送信に失敗しました'

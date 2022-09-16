@@ -11,6 +11,11 @@
           <%= render 'before_login_bookmark' %>
         <% end %>
         <%= link_to '写真を投稿する', new_facility_post_path(@facility), class: 'btn btn-info text-white', id: 'post-button' %>
+        <% if logged_in? %>
+          <%= link_to '施設を報告する', new_facility_report_path(@facility), class: 'btn btn-accent text-white' %>
+        <% else %>
+          <%= link_to '施設を報告する', login_path(@facility), class: 'btn btn-accent text-white'  %>
+        <% end %>
       </div>
       <h2 class="mb-8 text-2xl font-light text-center text-black">
         <% @facility.categories.each do |category| %>

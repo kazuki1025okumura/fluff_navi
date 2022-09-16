@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to facility_path(@post.facility)
+      redirect_to facility_path(@post.facility), success: t('.success')
     else
       @facility = Facility.find(params[:facility_id])
       flash.now[:error] = t('.error')
