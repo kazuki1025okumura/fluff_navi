@@ -7,6 +7,7 @@ ja:
       category: '施設カテゴリー'
       bookmark: 'お気に入り'
       post: '写真投稿'
+      report: '報告'
     attributes:
       user:
         email: 'メールアドレス'
@@ -21,3 +22,8 @@ ja:
       post:
         title: 'タイトル'
         image: '画像'
+      report:
+        content: '問い合わせ内容'
+        body: '概要'
+        image: '画像'
+        admin_comment: '管理者コメント'
