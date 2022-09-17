@@ -8,6 +8,7 @@ class ReportsController < ApplicationController
     @report = current_user.reports.build(report_params)
     if @report.save
       redirect_to facility_path(@report.facility), success: t('.success')
+      ReportMailer.with(report: @report).send_mail.deliver_later
     else
       @facility = Facility.find(params[:facility_id])
       flash.now[:error] = t('.error')
