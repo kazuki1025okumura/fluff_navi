@@ -1,7 +1,8 @@
 let facilityLatLng;
 const marker = [];
+const infoWindow = [];
 
-  window.initMap = () => {
+function initMap() {
   const map_center = { lat: gon.center_lat, lng: gon.center_lng };
   const zoom_level = gon.zoom_level;
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -24,5 +25,23 @@ const marker = [];
       position: facilityLatLng,
       map: map,
     })
+
+    const id = facility[i]['id']
+    const c = facility[i]['categories']
+    const infoContent = 
+    `<div class="facility-link map">` +
+    `<a href="/facilities/${id}" data-turbolinks="false"><u>${facility[i]['name']}</u></a>` +
+    `</div>` +
+    `<p>${facility[i]['address']}</p>`;
+
+    infoWindow[i] = new google.maps.InfoWindow({
+      content: infoContent
+    })
+
+    marker[i].addListener('click', function () {
+      infoWindow[i].open(map, marker[i])
+    })
   }
 }
+
+window.initMap = initMap;
