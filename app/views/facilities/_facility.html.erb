@@ -23,7 +23,7 @@
     <% if logged_in? %>
       <%= render 'bookmark_button', facility: facility %>
     <% else %>
-      <%= render 'before_login_bookmark' %>
+      <%= render 'before_login_bookmark', facility: facility %>
     <% end %>
   </div>
 </div>
