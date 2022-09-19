@@ -2,6 +2,10 @@
   margin: 20px;
 }
 
+.facility-link {
+  color: rgb(46, 102, 255);
+}
+
 #post-button:hover {
   background-color: rgb(11, 83, 217);
   border-color: rgb(11, 83, 217);
@@ -24,5 +28,10 @@
 #unbm-button {
   background-color: rgb(255, 96, 183);
   border-color: rgb(255, 96, 183);
+}
+
+#map {
+  height: 500px;
+  width: 100%;
 }
 

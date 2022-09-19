@@ -3,6 +3,7 @@
     <%= t('.title') %>
   </p>
   <% if @bookmark_facilities.present? %>
+    <div id='map' class='mb-6'></div>
     <%= render @bookmark_facilities %>
   <% else %>
     <p><%= t('.no_result') %></p>
