@@ -10,12 +10,12 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-    gon.facility = [@facility].as_json(include: :categories)
+    gon.facilities = [@facility].as_json(include: :categories)
   end
 
   def bookmarks
     @bookmark_facilities = current_user.facilities.includes(%i[facility_categories categories managements animals]).order(created_at: :desc)
-    gon.facility = @bookmark_facilities.as_json(include: :categories)
+    gon.facilities = @bookmark_facilities.as_json(include: :categories)
   end
 
   private
