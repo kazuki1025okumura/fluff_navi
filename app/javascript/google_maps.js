@@ -28,11 +28,20 @@ function initMap() {
 
     const id = facility[i]['id']
     const c = facility[i]['categories']
+
+    var categoriesHtml = '<ul>'
+    for (let j = 0; j < c.length; j++) {
+      categoriesHtml += `<li>${c[j].name}</li>`
+    };
+    categoriesHtml += '</ul>'
+
+
     const infoContent = 
     `<div class="facility-link map">` +
     `<a href="/facilities/${id}" data-turbolinks="false"><u>${facility[i]['name']}</u></a>` +
     `</div>` +
-    `<p>${facility[i]['address']}</p>`;
+    `<p>${facility[i]['address']}</p>` +
+    categoriesHtml;
 
     infoWindow[i] = new google.maps.InfoWindow({
       content: infoContent
