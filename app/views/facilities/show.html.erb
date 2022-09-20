@@ -34,7 +34,7 @@
           </tr>
           <tr>
             <td class="border px-4 py-2">電話番号</td>
-            <td class="border px-4 py-2"><%= @facility.tel_number %></td>
+            <td class="border px-4 py-2"><u><%= @facility.tel_number %></u></td>
           </tr>
           <tr>
             <td class="border px-4 py-2">住所</td>
@@ -51,7 +51,7 @@
           </tr>
           <tr>
             <td class="border px-4 py-2">ホームページ</td>
-            <td class="border px-4 py-2"><%= @facility.web_site %></td>
+            <td class="border px-4 py-2 facility-link"><%= link_to @facility.web_site, @facility.web_site %></td>
           </tr>
           <% if @facility.remarks.present? %>
           <tr>
