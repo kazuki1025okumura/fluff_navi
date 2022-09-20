@@ -8,4 +8,5 @@ class Report < ApplicationRecord
   belongs_to :facility
 
   validates :body, presence: true, length: { minimum: 10, maxmum: 8000 }
+  validates :content, presence: true
 end
