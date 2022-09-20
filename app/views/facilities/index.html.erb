@@ -3,6 +3,7 @@
     <%= t('.title') %>
   </p>
   <% if @facilities.present? %>
+    <div id='map' class='mb-6'></div>
     <%= render @facilities %>
   <% else %>
     <p><%= t('.no_result') %></p>
