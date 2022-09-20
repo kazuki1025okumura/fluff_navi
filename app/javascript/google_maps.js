@@ -11,14 +11,14 @@ function initMap() {
   })
 
   // 施設の情報を配列で取得
-  const facility = gon.facility;
+  const facilities = gon.facilities;
 
-  for (let i = 0; i < facility.length; i++) {
+  for (let i = 0; i < facilities.length; i++) {
 
     // LatLngで位置座標のインスタンスを生成していく
     facilityLatLng = new google.maps.LatLng({
-      lat: facility[i]['latitude'],
-      lng: facility[i]['longitude'],
+      lat: facilities[i]['latitude'],
+      lng: facilities[i]['longitude'],
     })
 
     marker[i] = new google.maps.Marker({
@@ -26,13 +26,22 @@ function initMap() {
       map: map,
     })
 
-    const id = facility[i]['id']
-    const c = facility[i]['categories']
+    const id = facilities[i]['id']
+    const c = facilities[i]['categories']
+
+    var categoriesHtml = '<ul>'
+    for (let j = 0; j < c.length; j++) {
+      categoriesHtml += `<li>${c[j].name}</li>`
+    };
+    categoriesHtml += '</ul>'
+
+
     const infoContent = 
     `<div class="facility-link map">` +
-    `<a href="/facilities/${id}" data-turbolinks="false"><u>${facility[i]['name']}</u></a>` +
+    `<a href="/facilities/${id}" data-turbolinks="false"><u>${facilities[i]['name']}</u></a>` +
     `</div>` +
-    `<p>${facility[i]['address']}</p>`;
+    `<p>${facilities[i]['address']}</p>` +
+    categoriesHtml;
 
     infoWindow[i] = new google.maps.InfoWindow({
       content: infoContent
