@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to login_path, Error: 'Please login first.'
+    redirect_to login_path, info: 'ログインしてください'
   end
 end

@@ -3,6 +3,7 @@
     <div class="w-full max-w-lg">
       <div class="leading-loose text-center">
         <%= form_with model: [@facility, @post], class: 'max-w-sm p-10 m-auto bg-white bg-opacity-25 rounded shadow-xl', local: true do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
           <p class="mb-8 text-2xl font-light text-black">
             <%= t('.title') %>
           </p>
@@ -10,7 +11,7 @@
             <div class="pt-5 pb-3">
               <%= f.label :title %>
             </div>
-            <%= f.text_field :title, placeholder: '60文字まで入力できます', class: 'input input-bordered input-info w-full max-w-xs' %>
+            <%= f.text_area :title, placeholder: '60文字まで入力できます', class: 'input input-bordered input-info w-full max-w-xs' %>
           </div>
           <div class="mb-4 flex-1">
             <div class="pt-5 pb-3">
