@@ -1,11 +1,11 @@
-<label for="my-modal-4" class="btn modal-button">動物の種類から検索</label>
+<label for="my-modal-4" class="btn modal-button flex-none">動物の種類から検索</label>
 <input type="checkbox" id="my-modal-4" class="modal-toggle" />
 <label for="my-modal-4" class="modal cursor-pointer">
-  <label class="modal-box relative" for="">
-    <h3 class="text-lg font-bold">動物の種類と都道府県を選択して検索できます</h3>
+  <label class="modal-box relative max-auto justify-center" for="">
+    <h3 class="text-lg font-bold mb-6 text-center">動物の種類と都道府県を選択して検索できます</h3>
     <div class="w-full">
       <div class="set-1 relative">
-        <div class="flex">
+        <div>
           <%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
             <div class="mb-1">
               <%= f.select :animal_id, Animal.pluck(:name, :id), { include_blank: '動物を選択' }, class: 'select select-info' %>

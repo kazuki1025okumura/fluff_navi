@@ -1,85 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
+body {
+  background-color: rgb(245, 254, 255);
+}
+
+.alert-success {
+  background-color: rgb(100, 240, 255) !important;
+}
+
+.select {
+  display: block !important;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
 .top-wrapper {
-  background-image: image-url("top.jpg");
-  height: calc(100vh - 134px);
-  position: relative;
-  background-position: center;
+  background-image: image-url("top2.jpg");
+  height: 430px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .top-title {
-    position: absolute;
-    top: 9%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  @media screen and (max-width: 830px) {
+    background-image: image-url("top.jpg");
     width: 100%;
-    text-align: center;
-    font-size: 7rem;
-    color: rgb(255, 11, 129);
-    font-family: 'Itim', cursive;
+    height: 0;
+    padding-top: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-    @media screen and (max-width: 767px) {
-      font-size: 4.0rem;
+  .top-title-object {
+    text-align: center;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+    @media screen and (max-width: 830px) {
+      margin: -50% 30px 0 30px;
     }
   }
 
-  .top-desc {
-    position: absolute;
-    top: 24%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    text-align: center;
-    color: rgb(255, 0, 153)
-  }
-
-  .top-message {
-    position: absolute;
-    top: 76%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 23px;
-    text-align: center;
-    color: rgb(49, 49, 49);
-    background-color: rgb(241, 255, 253)
-  }
-
-  .search-facility {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .top-title {
+    font-family: 'Corben', cursive;
+    font-size: 50px;
   }
 }
 
 .top-wrapper-animal {
-  height: calc(100vh - 700px);
   position: relative;
   background-position: center;
-
-  .animal-search-title {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .search-facility-animal {
-    position: absolute;
-    top: 70%;
-    left: 41%
-  }
-
 
   // 動物から検索のモーダルの中の表示
   .set-1.relative {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
+}
 
-  .allow-size {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.animal-search-form {
+  padding: 150px 0 10px 0;
 }
