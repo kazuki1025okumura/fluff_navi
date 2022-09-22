@@ -1,11 +1,12 @@
 class FacilitiesController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   before_action :set_center_of_show_map, only: %i[show]
-  before_action :set_center_of_bookmarks_map, only: %i[bookmarks]
+  before_action :set_center_of_bookmarks_map, only: %i[index bookmarks]
 
   def index
     @search_form = SearchForm.new(search_params)
     @facilities = @search_form.search.order(id: :desc)
+    gon.facilities = @facilities.as_json(include: :categories)
   end
 
   def show
