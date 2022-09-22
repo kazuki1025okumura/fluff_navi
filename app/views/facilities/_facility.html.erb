@@ -1,29 +1,32 @@
 <div class="card card-side bg-base-100 shadow-xl">
   <figure><%= image_tag 'no_image.jpg'%></figure>
   <div class="card-body">
-    <h2 class="card-title"><%= facility.name %></h2>
-    <% facility.categories.each do |category| %>
-      <h3><%= category.name %></h3>
-    <% end %>
-    <br>
-    <br>
-    <b>営業時間</b>
-    <p><%= facility.opening_hours %></p>
-    <b>定休日</b>
-    <p><%= facility.close_day %></p>
+    <div class="flex">
+      <h2 class="card-title mr-5"><%= facility.name %></h2>
+      <div>
+        <% facility.categories.each do |category| %>
+          <p class="whitespace-nowrap"><%= category.name %></p>
+        <% end %>
+      </div>
+    </div>
+    <p><%= facility.address %></p>
+    <div class="flex mt-3">
+      <b class="mr-5">定休日</b>
+      <p><%= facility.close_day %></p>
+    </div>
     <b>ふれあえる動物</b>
-    <% facility.animals.each do |animal| %>
-      <p><%= animal.name %></p>
-    <% end %>
-    <div class="card-actions justify-end">
-      <%= link_to facility_path(facility), data: { 'turbolinks': false } do %>
-        <button class="btn btn-primary">詳細を見る</button>
+    <div class="animals-name">
+      <% facility.animals.each do |animal| %>
+        <div class="animal-name">
+          <p><%= animal.name %></p>
+        </div>
       <% end %>
     </div>
-    <% if logged_in? %>
-      <%= render 'bookmark_button', facility: facility %>
-    <% else %>
-      <%= render 'before_login_bookmark', facility: facility %>
-    <% end %>
+    <div class="flex mb-1">
+      <%= link_to facility_path(facility), data: { 'turbolinks': false } do %>
+        <button class="btn btn-primary mr-2 whitespace-nowrap">詳細を見る</button>
+      <% end %>
+      <%= render 'bookmark_button', facility: facility, class: 'whitespace-nowrap' %>
+    </div>
   </div>
 </div>

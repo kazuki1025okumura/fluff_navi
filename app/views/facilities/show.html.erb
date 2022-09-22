@@ -4,14 +4,10 @@
       <h1 id="facility-title" class="mb-8 text-2xl font-light text-center text-black">
         <%= @facility.name %>
       </h1>
-      <div class="flex max-auto justify-center mx-3">
-        <% if logged_in? %>
-          <%= render 'bookmark_button', { facility: @facility } %>
-        <% else %>
-          <%= render 'before_login_bookmark', { facility: @facility } %>
-        <% end %>
-        <%= link_to '写真を投稿する', new_facility_post_path(@facility), class: 'btn btn-info text-white', id: 'post-button' %>
-        <%= link_to '施設を報告する', new_facility_report_path(@facility), class: 'btn btn-accent text-white' %>
+      <div class="flex max-auto justify-center">
+        <%= link_to '写真を投稿する', new_facility_post_path(@facility), class: 'btn btn-info text-white mr-2', id: 'post-button' %>
+        <%= link_to '施設を報告する', new_facility_report_path(@facility), class: 'btn btn-accent text-white mr-2' %>
+        <%= render 'bookmark_button', { facility: @facility } %>
       </div>
       <h2 class="mb-8 text-2xl font-light text-center text-black">
         <% @facility.categories.each do |category| %>
@@ -21,28 +17,28 @@
       <table class="table-fixed mb-8 text-2xl font-light text-center text-black">
         <tbody>
           <tr>
-            <td class="border px-4 py-2">施設紹介</td>
+            <td class="border px-4 py-2 whitespace-nowrap">施設紹介</td>
             <td class="border px-4 py-2"><%= @facility.description %></td>
           </tr>
           <tr>
-            <td class="border px-4 py-2">定休日</td>
+            <td class="border px-4 py-2 whitespace-nowrap">定休日</td>
             <td class="border px-4 py-2"><%= @facility.close_day %></td>
           </tr>
           <tr>
-            <td class="border px-4 py-2">営業時間</td>
+            <td class="border px-4 py-2 whitespace-nowrap">営業時間</td>
             <td class="border px-4 py-2"><%= @facility.opening_hours %></td>
           </tr>
           <tr>
-            <td class="border px-4 py-2">電話番号</td>
+            <td class="border px-4 py-2 whitespace-nowrap">電話番号</td>
             <td class="border px-4 py-2"><u><%= @facility.tel_number %></u></td>
           </tr>
           <tr>
-            <td class="border px-4 py-2">住所</td>
+            <td class="border px-4 py-2 whitespace-nowrap">住所</td>
             <td class="border px-4 py-2"><%= @facility.address %></td>
           </tr>
           
           <tr>
-            <td class="border px-4 py-2">料金</td>
+            <td class="border px-4 py-2 whitespace-nowrap">料金</td>
             <% if @facility.price.present? %>
               <td class="border px-4 py-2"><%= @facility.price %></td>
             <% else %>
@@ -50,20 +46,24 @@
             <% end %>
           </tr>
           <tr>
-            <td class="border px-4 py-2">ホームページ</td>
-            <td class="border px-4 py-2 facility-link"><%= link_to @facility.web_site, @facility.web_site %></td>
+            <td class="border px-4 py-2 text-lg whitespace-nowrap">ホームページ</td>
+            <% if @facility.web_site.present? %>
+              <td class="border px-4 py-2 facility-link"><%= link_to @facility.web_site, @facility.web_site %></td>
+            <% end %>
           </tr>
           <% if @facility.remarks.present? %>
           <tr>
-            <td class="border px-4 py-2">備考</td>
+            <td class="border px-4 py-2 whitespace-nowrap">備考</td>
             <td class="border px-4 py-2"><%= @facility.remarks %></td>
           </tr>
           <% end %>
           <tr>
-            <td class="border px-4 py-2">動物</td>
-            <td class="border px-4 py-2">
+            <td class="border px-4 py-2 whitespace-nowrap">動物</td>
+            <td class="border px-4 py-2 flex animals-name">
               <% @facility.animals.each do |animal| %>
-                <%= animal.name %>
+                <div class="mr-2 animal-name">
+                  <%= animal.name %>
+                </div>
               <% end %>
             </td>
           </tr>
