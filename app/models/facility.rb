@@ -10,7 +10,7 @@ class Facility < ApplicationRecord
   has_many :users, through: :bookmarks
   has_many :posts, dependent: :destroy
   has_many :user_posts, through: :posts, source: :user
-  has_many :reports, dependent: :nullify
+  has_many :reports, dependent: :destroy
   has_many :report_facilities, through: :reports, source: :user
 
   validates :name, presence: true
