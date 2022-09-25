@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_09_23_144035) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "kanji"
+    t.string "icon"
     t.index ["name"], name: "index_animals_on_name", unique: true
   end
 
@@ -127,7 +128,6 @@ ActiveRecord::Schema.define(version: 2022_09_23_144035) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
-    t.integer "icon_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
