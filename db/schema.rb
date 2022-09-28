@@ -85,24 +85,24 @@ ActiveRecord::Schema.define(version: 2022_09_28_070758) do
     t.index ["facility_id"], name: "index_facility_categories_on_facility_id"
   end
 
-  create_table "favolite_animals", force: :cascade do |t|
+  create_table "favorite_animals", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "animal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["animal_id"], name: "index_favolite_animals_on_animal_id"
-    t.index ["user_id", "animal_id"], name: "index_favolite_animals_on_user_id_and_animal_id", unique: true
-    t.index ["user_id"], name: "index_favolite_animals_on_user_id"
+    t.index ["animal_id"], name: "index_favorite_animals_on_animal_id"
+    t.index ["user_id", "animal_id"], name: "index_favorite_animals_on_user_id_and_animal_id", unique: true
+    t.index ["user_id"], name: "index_favorite_animals_on_user_id"
   end
 
-  create_table "favolite_categories", force: :cascade do |t|
+  create_table "favorite_categories", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_favolite_categories_on_category_id"
-    t.index ["user_id", "category_id"], name: "index_favolite_categories_on_user_id_and_category_id", unique: true
-    t.index ["user_id"], name: "index_favolite_categories_on_user_id"
+    t.index ["category_id"], name: "index_favorite_categories_on_category_id"
+    t.index ["user_id", "category_id"], name: "index_favorite_categories_on_user_id_and_category_id", unique: true
+    t.index ["user_id"], name: "index_favorite_categories_on_user_id"
   end
 
   create_table "managements", force: :cascade do |t|
@@ -155,10 +155,10 @@ ActiveRecord::Schema.define(version: 2022_09_28_070758) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "facility_categories", "categories"
   add_foreign_key "facility_categories", "facilities"
-  add_foreign_key "favolite_animals", "animals"
-  add_foreign_key "favolite_animals", "users"
-  add_foreign_key "favolite_categories", "categories"
-  add_foreign_key "favolite_categories", "users"
+  add_foreign_key "favorite_animals", "animals"
+  add_foreign_key "favorite_animals", "users"
+  add_foreign_key "favorite_categories", "categories"
+  add_foreign_key "favorite_categories", "users"
   add_foreign_key "managements", "animals"
   add_foreign_key "managements", "facilities"
   add_foreign_key "posts", "facilities"
