@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_28_070758) do
+ActiveRecord::Schema.define(version: 2022_09_29_081049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2022_09_28_070758) do
     t.integer "prefecture_id"
     t.float "latitude"
     t.float "longitude"
+    t.integer "suggest", default: 0
   end
 
   create_table "facility_categories", force: :cascade do |t|

@@ -15,6 +15,8 @@ class Facility < ApplicationRecord
 
   validates :name, presence: true
 
+  enum suggest: { normal: 0, recommend: 1 }
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   # 住所カラムに値が作成または更新された時、緯度経度に変換して緯度経度カラムに値を入れる
