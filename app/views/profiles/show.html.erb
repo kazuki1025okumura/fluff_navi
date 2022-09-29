@@ -3,11 +3,11 @@
     <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-outline float-right' %>
     <h3 class="text-5xl"><%= t('.title') %></h3>
     <div class="avatar">
-      <div class="w-28 mask mask-squircle">
+      <div class="w-28 mask mask-squircle m-4">
         <%= image_tag current_user.avatar.url %>
       </div>
     </div>
-    <div>
+    <div class="m-4">
       <b>
         <%= t(User.human_attribute_name :name) %>
       </b>
@@ -15,12 +15,24 @@
         <%= current_user.name%>
       </div>
     </div>
-    <div>
+    <div class="m-4">
       <b>
         <%= t(User.human_attribute_name :email) %>
       </b>
       <div>
         <%= current_user.email %>
+      </div>
+    </div>
+    <div class="m-4">
+      <b>お気に入りの動物</b>
+      <div>
+        <%= current_user.animal.name if current_user.animal.present? %>
+      </div>
+    </div>
+    <div class="m-4">
+      <b>お気に入りのカテゴリー</b>
+      <div>
+        <%= current_user.category.name if current_user.category.present? %>
       </div>
     </div>
   </div>
