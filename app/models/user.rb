@@ -8,6 +8,15 @@ class User < ApplicationRecord
   has_many :reports, dependent: :nullify
   has_many :report_facilities, through: :reports, source: :facility
 
+  has_one :favorite_animal, dependent: :destroy, inverse_of: :user
+  has_one :animal, through: :favorite_animal
+  has_one :favorite_category, dependent: :destroy, inverse_of: :user
+  has_one :category, through: :favorite_category
+
+  # プロフィール編集で複数モデルのレコードを変更するための設定
+  accepts_nested_attributes_for :favorite_animal, reject_if: lambda { |attributes| attributes['animal_id'].blank? }
+  accepts_nested_attributes_for :favorite_category, reject_if: lambda { |attributes| attributes['category_id'].blank? }
+
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
