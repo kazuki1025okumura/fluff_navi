@@ -8,6 +8,8 @@ ja:
       bookmark: 'お気に入り'
       post: '写真投稿'
       report: '報告'
+      favorite_animal: 'お気に入りの動物'
+      favorite_category: 'お気に入りのカテゴリー'
     attributes:
       user:
         email: 'メールアドレス'
@@ -27,3 +29,7 @@ ja:
         body: '概要'
         image: '画像'
         admin_comment: '管理者コメント'
+      favorite_animal:
+        animal_id: 'お気に入りの動物'
+      favorite_category:
+        category_id: 'お気に入りのカテゴリー'
