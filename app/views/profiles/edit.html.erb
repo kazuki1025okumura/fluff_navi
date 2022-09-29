@@ -11,7 +11,7 @@
             <div class="pt-5 pb-3">
               <%= f.label :avatar %>
               <%= f.file_field :avatar, onchange: 'previewImage(preview)', class: 'form-control mb-3', accept: 'image/*' %>
-              <div class='mt-3 mb-3'>
+              <div class='mt-3 mb-3 flex max-auto justify-center'>
                 <%= image_tag @user.avatar.url, class: 'rounded-circle', id: 'preview', size: '100x100' %>
               </div>
               <%= f.hidden_field :avatar_cache %>
@@ -29,6 +29,22 @@
             </div>
             <%= f.email_field :email, class: 'input input-bordered input-info w-full max-w-xs' %>
           </div>
+          <%= f.fields_for :favorite_animal do |animal_form| %>
+            <div class="mb-4 flex-1">
+              <div class="pt-5 pb-3">
+                <%= animal_form.label :animal_id %>
+              </div>
+              <%= animal_form.select :animal_id, Animal.pluck(:name, :id), { include_blank: '選択してください' }, class: 'select select-info w-full max-w-xs' %>
+            </div>
+          <% end %>
+          <%= f.fields_for :favorite_category do |category_form| %>
+            <div class="mb-4 flex-1">
+              <div class="pt-5 pb-3">
+                <%= category_form.label :category_id %>
+              </div>
+              <%= category_form.select :category_id, Category.pluck(:name, :id), { include_blank: '選択してください' }, class: 'select select-info w-full max-w-xs' %>
+            </div>
+          <% end %>
           <div class="flex items-center justify-between mt-4">
             <%= f.submit (t '.update'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
           </div>
