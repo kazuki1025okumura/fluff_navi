@@ -1,3 +1,3 @@
 ActiveAdmin.register Facility do
-  permit_params :address
+  permit_params :name, :address, :suggest
 end

@@ -26,7 +26,7 @@
       <%= link_to facility_path(facility), data: { 'turbolinks': false } do %>
         <button class="btn btn-primary mr-2 whitespace-nowrap">詳細を見る</button>
       <% end %>
-      <%= render 'bookmark_button', facility: facility, class: 'whitespace-nowrap' %>
+      <%= render 'shared/bookmark_button', facility: facility, class: 'whitespace-nowrap' %>
     </div>
   </div>
 </div>

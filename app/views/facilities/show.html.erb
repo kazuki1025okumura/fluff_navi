@@ -7,7 +7,7 @@
       <div class="flex max-auto justify-center">
         <%= link_to '写真を投稿する', new_facility_post_path(@facility), class: 'btn btn-info text-white mr-2', id: 'post-button' %>
         <%= link_to '施設を報告する', new_facility_report_path(@facility), class: 'btn btn-accent text-white mr-2' %>
-        <%= render 'bookmark_button', { facility: @facility } %>
+        <%= render 'shared/bookmark_button', { facility: @facility } %>
       </div>
       <h2 class="mb-8 text-2xl font-light text-center text-black">
         <% @facility.categories.each do |category| %>

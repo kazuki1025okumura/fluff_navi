@@ -14,3 +14,19 @@
     <%= render 'shared/animal_search' %>
   </div>
 </div>
+<div class="flex">
+  <div>
+    <% if logged_in? %>
+      <% current_user.suggest_to_login_user(current_user).each do |facility| %>
+        <%= render 'facilities/facility', facility: facility %>
+      <% end %>
+    <% else %>
+      <% @facilities.each do |facility| %>
+        <%= render 'facilities/facility', facility: facility %>
+      <% end %>
+    <% end %>
+  </div>
+  <div>
+    <%= render 'shared/posts', posts: @posts %>
+  </div>
+</div>
