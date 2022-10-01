@@ -6,6 +6,7 @@ ja:
     sign_up: '新規登録'
     edit: '編集'
     destroy: '削除'
+    password_reset: 'パスワードリセット手続き'
     message:
       require_login: 'ログインしてください'
       updated: 'プロフィールを編集しました'
@@ -58,3 +59,14 @@ ja:
     create:
       success: '管理者へ報告が完了しました'
       error: '送信に失敗しました'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    edit:
+      title: '新規パスワード作成'
+    create:
+      success: 'パスワードリセット手順をメールで送信しました'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'

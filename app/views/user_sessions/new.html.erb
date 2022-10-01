@@ -3,7 +3,7 @@
     <div class="w-full max-w-lg">
       <div class="leading-loose">
         <%= form_with url: login_path, class: 'max-w-sm p-10 m-auto bg-white bg-opacity-25 rounded shadow-xl', local: true do |f| %>
-          <p class="mb-8 text-2xl font-light text-center text-black">
+          <p class="mb-8 text-3xl font-light text-center text-black">
             <%= t('.title') %>
           </p>
           <div class="mb-4 flex-1">
@@ -16,8 +16,9 @@
             <%= f.submit (t 'defaults.login'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
           </div>
         <% end %>
-        <div class='text-center'>
-          <%= link_to (t '.to_register_page'), new_user_path, class: 'text-indigo-400' %>
+        <div class='text-center flex max-auto justify-center mt-8'>
+          <%= link_to t('.to_register_page'), new_user_path, class: 'text-indigo-400 m-4' %>
+          <%= link_to t('.password_forget'), new_password_reset_path, class: 'text-indigo-400 m-4' %>
         </div>
       </div>
     </div>
