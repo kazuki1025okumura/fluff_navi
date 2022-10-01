@@ -5,7 +5,27 @@
         <%= image_tag 'title.png', size: '100x70' %>
       <% end %>
     </div>
-    <div class="flex-none">
+    <div class="flex-none lg:hidden">
+      <ul class="menu menu-horizontal p-0">
+        <li>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-info text-white">Menu</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 top-20">
+              <li>
+                <%= link_to (t 'facilities.bookmarks.title'), bookmarks_facilities_path %>
+              </li>
+              <li>
+                <%= link_to (t 'profiles.show.title'), profile_path %>
+              </li>
+              <li>
+                <%= link_to (t 'defaults.logout'), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="flex-none hidden lg:block">
       <ul class="menu menu-horizontal p-0">
         <li>
           <%= link_to (t 'facilities.bookmarks.title'), bookmarks_facilities_path %>
