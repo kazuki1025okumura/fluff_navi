@@ -1,8 +1,9 @@
-<div class="mx-auto px-4 sm:px-8 max-w-3xl">
-  <p class="mb-8 text-4xl text-center text-black">
+<div class="mx-auto px-4 sm:px-8 max-w-3xl text-center">
+  <p class="mb-8 text-4xl text-black">
     <%= t('.title') %>
   </p>
   <% if @facilities.present? %>
+    <p class="text-2xl mb-6"><b><%= @facilities.length %></b> 件の施設が見つかりました</p>
     <div id='map' class='mb-6'></div>
     <%= render @facilities %>
   <% else %>

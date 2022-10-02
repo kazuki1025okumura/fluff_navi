@@ -1,8 +1,9 @@
-<div class="mx-auto px-4 sm:px-8 max-w-3xl">
-  <p class="mb-8 text-4xl text-center text-black">
+<div class="mx-auto px-4 sm:px-8 max-w-3xl text-center ">
+  <p class="mb-8 text-4xl text-black">
     <%= t('.title') %>
   </p>
   <% if @bookmark_facilities.present? %>
+    <p class="text-3xl mb-6"><b><%= @bookmark_facilities.length %></b> 件の施設が登録されています</p>
     <div id='map' class='mb-6'></div>
     <%= render @bookmark_facilities %>
   <% else %>
