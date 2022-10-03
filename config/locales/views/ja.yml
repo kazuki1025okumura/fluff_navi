@@ -24,6 +24,7 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+      remember: 'ログイン状態を保持'
     create:
       success: 'ログインしました'
       error: 'ログインに失敗しました。 メールアドレス、パスワードが間違っていないかご確認ください'
