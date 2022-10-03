@@ -26,6 +26,6 @@ class SearchForm
   private
 
   def search_words
-    name.present? ? name.split(nil) : []
+    name.present? ? name.split(/[[:blank:]]+/) : []
   end
 end
