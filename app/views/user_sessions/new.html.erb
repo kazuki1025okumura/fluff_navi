@@ -12,6 +12,17 @@
           <div class="mb-4 flex-1">
             <%= f.password_field :password, value: params[:password], placeholder: 'パスワード', class: 'input input-bordered input-info w-full max-w-xs' %>
           </div>
+          <div class="flex items-center mt-8">
+            <div>
+              <%= check_box_tag :remember, params[:remember], true, class: 'mx-1' %>
+            </div>
+            <div>
+              <%= label_tag t('.remember') %>
+            </div>
+          </div>
+          <div>
+            <p>時間が経ってもログイン状態を保てるようになります</p>
+          </div>
           <div class="actions flex items-center justify-between mt-4">
             <%= f.submit (t 'defaults.login'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
           </div>
