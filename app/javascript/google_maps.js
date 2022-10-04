@@ -1,4 +1,6 @@
 let facilityLatLng;
+let currentMarker;
+let currentInfoWindow
 const marker = [];
 const infoWindow = [];
 
@@ -9,6 +11,21 @@ function initMap() {
     center: map_center,
     zoom: zoom_level,
   })
+
+  // 現在地を取得してマップ上にマーカーを表示する
+  navigator.geolocation.getCurrentPosition(function (position) {
+    LatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    currentMarker = new google.maps.Marker({
+      map : map,         
+      position : LatLng,
+      icon: {
+        url: 'assets/current_marker.png',
+        scaledSize: new google.maps.Size(22, 22), 
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(11, 11),
+      },
+    });
+  });
 
   // 施設の情報を配列で取得
   const facilities = gon.facilities;
@@ -47,9 +64,16 @@ function initMap() {
       content: infoContent
     })
 
+    // マーカーをクリックしたら吹き出しを表示する処理
     marker[i].addListener('click', function () {
-      infoWindow[i].open(map, marker[i])
-    })
+      if (currentInfoWindow) {
+        currentInfoWindow.close();   // 吹き出しが表示されていた場合その吹き出しを閉じる
+      }
+      infoWindow[i].open(map, marker[i]);   // 吹き出しを開く
+
+      // 開いた吹き出しを変数に代入して次回別のマーカーをクリックした際に変数に格納されている吹き出しを閉じる
+      currentInfoWindow = infoWindow[i];
+    });
   }
 }
 
