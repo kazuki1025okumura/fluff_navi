@@ -11,6 +11,7 @@ ja:
       require_login: 'ログインしてください'
       updated: 'プロフィールを編集しました'
       not_updated: 'プロフィールを編集できませんでした'
+      delete_confirm: '投稿を削除してもよろしいですか？'
   users:
     new:
       title: 'ユーザー登録'
@@ -53,7 +54,8 @@ ja:
     create:
       success: '投稿しました'
       error: '投稿できませんでした'
-    destroy: '投稿を削除しました'
+    destroy:
+      success: '投稿を削除しました'
   reports:
     new:
       title: '報告フォーム'

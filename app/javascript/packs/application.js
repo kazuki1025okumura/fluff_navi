@@ -15,3 +15,7 @@ require('jquery')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(function(){
+  setTimeout("$('#flash-message').fadeOut('slow')", 2000);
+});
