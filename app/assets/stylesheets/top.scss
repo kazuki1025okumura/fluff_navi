@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  background-color: rgb(245, 254, 255);
+  background-color: rgb(251, 255, 255);
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #303030
 }
 
 .alert-success {
