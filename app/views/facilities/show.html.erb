@@ -50,7 +50,7 @@
           <tr>
             <td class="border px-1 py-2 text-lg whitespace-nowrap">HP</td>
             <% if @facility.web_site.present? %>
-              <td class="border px-1 py-2 facility-link"><%= link_to @facility.web_site, @facility.web_site %></td>
+              <td class="border px-1 py-2 custom-link"><%= link_to @facility.web_site, @facility.web_site %></td>
             <% end %>
           </tr>
           <% if @facility.remarks.present? %>
