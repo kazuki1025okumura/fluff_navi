@@ -5,7 +5,7 @@
       <h2 class="card-title mr-5"><%= facility.name %></h2>
       <div>
         <% facility.categories.each do |category| %>
-          <p class="whitespace-nowrap"><%= category.name %></p>
+          <p class="whitespace-nowrap badge badge-outline"><%= category.name %></p>
         <% end %>
       </div>
     </div>
@@ -17,8 +17,8 @@
     <b>ふれあえる動物</b>
     <div class="animals-name">
       <% facility.animals.each do |animal| %>
-        <div class="animal-name">
-          <p><%= animal.name %></p>
+        <div class="animal-name my-2">
+          <%= image_tag animal.icon, size: '40' %>
         </div>
       <% end %>
     </div>
