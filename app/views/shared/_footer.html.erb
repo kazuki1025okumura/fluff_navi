@@ -1,7 +1,7 @@
 <footer class="footer footer-center p-8 bg-gray-400 text-base-content rounded text-gray-100">
   <div class="grid grid-flow-col gap-4">
-    <a class="link link-hover">利用規約</a> 
-    <a class="link link-hover">プライバシーポリシー</a> 
+    <%= link_to terms_of_service_path, class: 'link link-hover' do %>利用規約<% end %> 
+    <%= link_to privacy_policy_path, class: 'link link-hover' do %>プライバシーポリシー<% end %>
     <a class="link link-hover">お問合せ</a> 
   </div> 
   <div>
