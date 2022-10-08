@@ -54,7 +54,7 @@ function initMap() {
 
 
     const infoContent = 
-    `<div class="facility-link map">` +
+    `<div class="custom-link map">` +
     `<a href="/facilities/${id}" data-turbolinks="false"><u>${facilities[i]['name']}</u></a>` +
     `</div>` +
     `<p>${facilities[i]['address']}</p>` +
