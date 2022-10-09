@@ -7,9 +7,17 @@ class ApplicationRecord < ActiveRecord::Base
   def suggest_to_login_user(user)
     animal = user.animal
     category = user.category
-    facilities = Facility.offset(rand(Facility.count)).limit(100)
-    suggest_animal_facilities = facilities.favo_animal(animal).to_a
-    suggest_category_facilities = facilities.favo_category(category).to_a
-    suggest_animal_facilities.concat(suggest_category_facilities).uniq.sample(3)
+    hoge(animal, category)
+  end
+
+  def hoge(animal, category)
+    facilities = Facility.limit(100).offset(rand(5))
+    if !animal && !category
+      facilities.where(suggest: 1).includes(%i[facility_categories categories managements animals]).sample(3)
+    else
+      suggest_animal_facilities = animal ? facilities.favo_animal(animal).to_a : []
+      suggest_category_facilities = category ? facilities.favo_category(category).to_a : []
+      suggest_animal_facilities.concat(suggest_category_facilities).uniq.sample(3)
+    end
   end
 end
