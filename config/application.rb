@@ -21,6 +21,8 @@ Bundler.require(*Rails.groups)
 
 module FluffNavi
   class Application < Rails::Application
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.eager_load_paths += %W(#{config.root}/lib)
     config.load_defaults 6.1
     config.generators.system_tests = nil
     config.i18n.default_locale = :ja

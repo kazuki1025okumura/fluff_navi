@@ -1,13 +1,8 @@
-Category.seed_once(:id,
-  { id: 1, name: '動物園' },
-  { id: 2, name: '水族館' },
-  { id: 3, name: '牧場', other_name: 'ファーム' },
-  { id: 4, name: '猫カフェ', other_name: 'ネコカフェ' },
-  { id: 5, name: 'ドッグランド', other_name: 'ドッグ' },
-  { id: 6, name: 'ハリネズミカフェ' },
-  { id: 7, name: 'フクロウカフェ' },
-  { id: 8, name: '爬虫類カフェ' },
-  { id: 9, name: '動物カフェ' },
-  { id: 10, name: 'その他' },
-  { id: 11, name: 'レア動物' },
-)
+require 'csv'
+
+CSV.read('lib/csv/category.csv', headers: true).each do |row|
+  Category.seed do |s|
+    s.id = row['id']
+    s.name = row['name']
+  end
+end
