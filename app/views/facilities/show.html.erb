@@ -1,6 +1,6 @@
 <div class="max-w-screen-md grid sm:grid-cols-2 mx-auto">
   <div class="sm:col-span-2 p-3.5 items-center text-center">
-    <div class="container mx-auto mt-24 py-3 px-3 md:px-20">
+    <div class="container mx-auto mt-10 py-3 px-3 md:px-20">
       <h1 id="facility-title" class="mb-8 text-2xl font-light text-center">
         <%= @facility.name %>
       </h1>
@@ -23,12 +23,12 @@
             <td class="border px-1 py-2"><%= @facility.description %></td>
           </tr>
           <tr>
-            <td class="border px-1 py-2 whitespace-nowrap">定休日</td>
-            <td class="border px-1 py-2"><%= @facility.close_day %></td>
-          </tr>
-          <tr>
             <td class="border px-1 py-2 whitespace-nowrap">営業時間</td>
-            <td class="border px-1 py-2"><%= @facility.opening_hours %></td>
+            <td class="border px-1 py-2">
+              <% @facility.opening_hours.split('.').each do |o| %>
+                <div><%= o %></div>
+              <% end %>
+            </td>
           </tr>
           <tr>
             <td class="border px-1 py-2 whitespace-nowrap">電話番号</td>
@@ -37,15 +37,6 @@
           <tr>
             <td class="border px-1 py-2 whitespace-nowrap">住所</td>
             <td class="border px-1 py-2"><%= @facility.address %></td>
-          </tr>
-          
-          <tr>
-            <td class="border px-1 py-2 whitespace-nowrap">料金</td>
-            <% if @facility.price.present? %>
-              <td class="border px-1 py-2"><%= @facility.price %></td>
-            <% else %>
-              <td class="border px-1 py-2">ホームページをご覧になるか施設へお問合せください</td>
-            <% end %>
           </tr>
           <tr>
             <td class="border px-1 py-2 text-lg whitespace-nowrap">HP</td>
