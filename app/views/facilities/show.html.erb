@@ -1,3 +1,4 @@
+<% set_meta_tags title: @facility.name, description: @facility.description, keywords: [@facility.prefecture.name, @facility.categories.pluck(:name).join(',')].join(',') %>
 <div class="max-w-screen-md grid sm:grid-cols-2 mx-auto">
   <div class="sm:col-span-2 p-3.5 items-center text-center">
     <div class="container mx-auto mt-10 py-3 px-3 md:px-20">
