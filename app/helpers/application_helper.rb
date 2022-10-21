@@ -2,7 +2,7 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: '~FLUFF MAPS~',
-      title: '東京、神奈川で動物とふれあえる施設の検索サービス',
+      title: '東京、神奈川で動物とのふれあいに特化した検索サービス',
       reverse: true,
       charset: 'utf-8',
       description: 'FLUFF MAPSは動物とふれあうことができる施設を地域や動物名から簡単に探せるサービスです。',
