@@ -29,7 +29,7 @@
             </div>
             <%= f.email_field :email, class: 'input input-bordered input-info w-full max-w-xs' %>
           </div>
-          <%= f.fields_for :favorite_animal do |animal_form| %>
+          <%= f.fields_for :favorite_animal, (current_user.favorite_animal || FavoriteAnimal.new) do |animal_form| %>
             <div class="mb-4 flex-1">
               <div class="pt-5 pb-3">
                 <%= animal_form.label :animal_id %>
@@ -37,7 +37,7 @@
               <%= animal_form.select :animal_id, Animal.pluck(:name, :id), { include_blank: '選択してください' }, class: 'select select-info w-full max-w-xs' %>
             </div>
           <% end %>
-          <%= f.fields_for :favorite_category do |category_form| %>
+          <%= f.fields_for :favorite_category, (current_user.favorite_category || FavoriteCategory.new) do |category_form| %>
             <div class="mb-4 flex-1">
               <div class="pt-5 pb-3">
                 <%= category_form.label :category_id %>
