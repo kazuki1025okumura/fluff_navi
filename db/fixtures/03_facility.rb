@@ -14,6 +14,7 @@ CSV.read('lib/csv/tokyo.csv', headers: true).each do |row|
     s.web_site = row['web_site']
     s.prefecture_id = row['prefecture_id']
     s.id = row['id']
+    s.suggest = row['suggest']
   end
 end
 
@@ -31,5 +32,6 @@ CSV.read('lib/csv/kanagawa.csv', headers: true).each do |row|
     s.web_site = row['web_site']
     s.prefecture_id = row['prefecture_id']
     s.id = row['id']
+    s.suggest = row['suggest']
   end
 end
