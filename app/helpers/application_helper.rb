@@ -12,7 +12,7 @@ module ApplicationHelper
       noindex: ! Rails.env.production?,
       icon: [
         { href: image_url('favicon.ico') },
-        { href: image_url('phone_touch_icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180' },
+        { href: image_url('phone_touch_icon.png'), rel: 'apple-touch-icon', sizes: '180x180' },
       ],
       og: {
         site_name: :site,
