@@ -17,6 +17,7 @@ ja:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
       login_button_message: 'アカウントを登録します'
+      twitter_title: 'SNSアカウントがある方はこちらがオススメ'
     create:
       success: 'ユーザー登録が完了しました'
       error: 'ユーザー登録に失敗しました'
@@ -26,6 +27,7 @@ ja:
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
       remember: 'ログイン状態を保持'
+      login_message: 'メールアドレスでログイン'
     create:
       success: 'ログインしました'
       error: 'ログインに失敗しました。 メールアドレス、パスワードが間違っていないかご確認ください'
@@ -73,3 +75,6 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
+  oauths:
+    callback:
+      success: "%{item}でログインしました"

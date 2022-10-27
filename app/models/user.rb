@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :facility_posts, through: :posts, source: :facility
   has_many :reports, dependent: :nullify
   has_many :report_facilities, through: :reports, source: :facility
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
 
   has_one :favorite_animal, dependent: :destroy, inverse_of: :user
   has_one :animal, through: :favorite_animal
