@@ -19,7 +19,7 @@ function initMap() {
       map : map,         
       position : LatLng,
       icon: {
-        url: 'assets/current_marker.png',
+        url: '/assets/current_marker.png',
         scaledSize: new google.maps.Size(22, 22), 
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(11, 11),
