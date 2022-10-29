@@ -117,7 +117,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.twitter.key = ENV['TWITTER_API_KEY']
   config.twitter.secret = ENV['TWITTER_API_SECRET_KEY']
-  config.twitter.callback_url = "https://www.fluff-maps.com/oauth/callback"
+  config.twitter.callback_url = "https://www.fluff-maps.com/oauth/callback?provider=twitter"
   config.twitter.user_info_mapping = {
     name: 'name',
     email: 'screen_name'
