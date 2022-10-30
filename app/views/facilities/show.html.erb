@@ -13,7 +13,7 @@
         <% end %>
       </h2>
       <div>
-        <div class="show-facility-image flex max-auto justify-center"><%= facility_image(@facility) %></div>
+        <div class="show-facility-image"><%= facility_image(@facility) %></div>
       </div>
       <div class="flex max-auto justify-center mb-4">
         <%= link_to '写真を投稿する', new_facility_post_path(@facility), class: 'btn btn-info text-white mr-2', id: 'post-button' %>
