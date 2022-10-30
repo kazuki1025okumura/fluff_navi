@@ -1,32 +1,35 @@
 <div class="card card-side bg-base-100 shadow-xl">
-  <figure><%= facility_image(facility) %></figure>
   <div class="card-body">
     <div class="flex">
-      <h2 class="card-title mr-5"><%= facility.name %></h2>
+      <h2 class="mr-2 sm:text-2xl"><b><%= facility.name %></b></h2>
       <div>
         <% facility.categories.each do |category| %>
-          <p class="whitespace-nowrap badge badge-outline"><%= category.name %></p>
+          <p class="whitespace-nowrap badge badge-outline text-xs sm:text-base"><%= category.name %></p>
         <% end %>
       </div>
     </div>
-    <p><%= facility.address %></p>
-    <div class="flex mt-3">
-      <b class="mr-5">定休日</b>
-      <p><%= facility.close_day %></p>
-    </div>
-    <b>ふれあえる動物</b>
-    <div class="animals-name">
-      <% facility.animals.each do |animal| %>
-        <div class="animal-name my-2">
-          <%= image_tag animal.icon, size: '40' %>
+    <p class="flex text-xs sm:text-sm text-gray-600"><%= facility.address %></p>
+
+    <div class="flex mt-1">
+      <figure><span class="facility-image"><%= facility_image(facility) %></span></figure>
+      <div>
+        <b class="text-sm sm:text-base flex ml-2">ふれあえる動物</b>
+        <div class="animals-name ml-2">
+          <% facility.animals.each do |animal| %>
+            <div class="animal-name my-1 ml-2">
+              <%= image_tag animal.icon, size: '40' %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
-    <div class="flex mb-1">
-      <%= link_to facility_path(facility), data: { 'turbolinks': false } do %>
-        <button class="btn btn-primary mr-2 whitespace-nowrap">詳細を見る</button>
-      <% end %>
-      <%= render 'shared/bookmark_button', facility: facility, class: 'whitespace-nowrap' %>
+    <div class="flex justify-end">
+      <div class="flex">
+        <%= render 'shared/bookmark_button', facility: facility, class: 'whitespace-nowrap' %>
+        <%= link_to facility_path(facility), data: { 'turbolinks': false } do %>
+          <button class="btn btn-primary whitespace-nowrap  ml-3">詳細を見る</button>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

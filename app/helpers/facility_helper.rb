@@ -8,28 +8,27 @@ module FacilityHelper
   end
 
   def select_image(facility)
-    case facility.category_ids.first
-    when 3
+    if facility.category_ids.include?(3)
       image_tag 'facilities/farm.jpg'
-    when 5
+    elsif facility.category_ids.include?(5)
       image_tag 'facilities/dog.jpg'
-    when 2
+    elsif facility.category_ids.include?(2)
       image_tag 'facilities/aquarium.jpg'
-    when 4
+    elsif facility.category_ids.include?(4)
       image_tag 'facilities/cat.jpg'
-    when 9
+    elsif facility.category_ids.include?(9)
       image_tag 'facilities/lizard.jpg'
-    when 6
+    elsif facility.category_ids.include?(6)
       image_tag 'facilities/hedgehog.jpg'
-    when 8
+    elsif facility.category_ids.include?(8)
       image_tag 'facilities/bird.jpg'
-    when 7
+    elsif facility.category_ids.include?(7)
       image_tag 'facilities/owl.jpg'
-    when 10
+    elsif facility.category_ids.include?(10)
       image_tag 'facilities/animal_cafe.jpg'
-    when 1
+    elsif facility.category_ids.include?(1)
       image_tag 'facilities/zoo.jpg'
-    when 12
+    elsif facility.category_ids.include?(12)
       image_tag 'facilities/rare.jpg'
     else
       image_tag 'no_image.jpg'
