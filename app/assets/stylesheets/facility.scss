@@ -3,28 +3,38 @@
 }
 
 .card figure {
-  width: 35%;
+  width: 30%;
   align-items: baseline !important;
   padding: 5px
 }
 
 .card-body {
-  padding: 20px 15px 10px 15px !important;
+  padding: 15px 10px 8px 10px !important;
 }
 
 .animals-name {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .animal-name {
+  display:flex;
+  justify-content:center;
+  align-items:center;
   white-space: nowrap;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
-  width: calc(18% - 2px);
+  width: calc(25% - 7px);
+  width: 80px;
+  margin: 2px;
+
+  @media screen and (max-width: 530px) {
+    width: calc(18% - 4px);
+    width: 30px;
+    margin: 5px;
+  }
 }
 
 .custom-link {
@@ -76,8 +86,15 @@
 }
 
 #map {
-  height: 500px;
+  height: 600px;
   width: 100%;
+
+  @media screen and (max-width: 640px) {
+    height: 400px;
+  }
+  @media screen and (max-width: 520px) {
+    height: 300px;
+  }
 }
 
 .post-content {
