@@ -20,7 +20,7 @@
         <%= link_to '施設を報告する', new_facility_report_path(@facility), class: 'btn btn-accent text-white mr-2' %>
         <%= render 'shared/bookmark_button', { facility: @facility } %>
       </div>
-      <table class="table-fixed mb-8 font-light">
+      <table class="table-fixed mb-8 font-light table-border">
         <tbody class="w-11/12 m-auto">
           <tr>
             <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">施設紹介</td>
@@ -47,7 +47,7 @@
           <tr>
             <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">HP</td>
             <% if @facility.web_site.present? %>
-              <td class="px-1 py-2 text-sm sm:text-lg custom-link"><%= link_to @facility.web_site, @facility.web_site %></td>
+              <td class="px-1 py-2 text-sm sm:text-lg custom-link break-all"><%= link_to @facility.web_site, @facility.web_site %></td>
             <% end %>
           </tr>
           <tr>
