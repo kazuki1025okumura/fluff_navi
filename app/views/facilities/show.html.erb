@@ -1,32 +1,35 @@
 <% set_meta_tags title: @facility.name, description: @facility.description, keywords: [@facility.prefecture.name, @facility.categories.pluck(:name).join(',')].join(',') %>
 <div class="max-w-screen-md grid sm:grid-cols-2 mx-auto">
-  <div class="sm:col-span-2 p-3.5 items-center text-center">
-    <div class="container mx-auto mt-10 py-3 px-3 md:px-20">
-      <h1 id="facility-title" class="mb-8 text-2xl font-light text-center">
+  <div class="sm:col-span-2 p-3.5 items-center">
+    <div class="container mx-auto mt-2 py-3 px-3 md:px-10">
+      <h1 class="mb-2 text-2xl sm:text-3xl font-extrabold leading-normal">
         <%= @facility.name %>
       </h1>
-      <h2 class="mb-8 text-2xl font-light text-center">
+      <h2 class="mb-5">
         <% @facility.categories.each do |category| %>
-          <span class="mx-2 badge badge-outline">
+          <span class="mx-1 badge badge-outline text-sm sm:text-base">
             <%= category.name %>
           </span>
         <% end %>
       </h2>
+      <div>
+        <div class="show-facility-image"><%= facility_image(@facility) %></div>
+      </div>
       <div class="flex max-auto justify-center mb-4">
         <%= link_to '写真を投稿する', new_facility_post_path(@facility), class: 'btn btn-info text-white mr-2', id: 'post-button' %>
         <%= link_to '施設を報告する', new_facility_report_path(@facility), class: 'btn btn-accent text-white mr-2' %>
         <%= render 'shared/bookmark_button', { facility: @facility } %>
       </div>
-      <table class="table-fixed mb-8 text-base font-light text-center">
+      <table class="table-fixed mb-8 font-light table-border">
         <tbody class="w-11/12 m-auto">
           <tr>
-            <td class="border px-1 py-2 whitespace-nowrap">施設紹介</td>
-            <td class="border px-1 py-2"><%= @facility.description %></td>
+            <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">施設紹介</td>
+            <td class="px-1 py-2 text-sm sm:text-lg leading-relaxed"><%= @facility.description %></td>
           </tr>
           <% if @facility.opening_hours %>
             <tr>
-              <td class="border px-1 py-2 whitespace-nowrap">営業時間</td>
-              <td class="border px-1 py-2">
+              <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">営業時間</td>
+              <td class="px-1 py-2 text-sm sm:text-lg leading-5">
                 <% @facility.opening_hours.split('.').each do |o| %>
                   <div><%= o %></div>
                 <% end %>
@@ -34,28 +37,22 @@
             </tr>
           <% end %>
           <tr>
-            <td class="border px-1 py-2 whitespace-nowrap">電話番号</td>
-            <td class="border px-1 py-2"><u><%= @facility.tel_number %></u></td>
+            <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">電話番号</td>
+            <td class="px-1 py-2 text-sm sm:text-lg underline"><%= @facility.tel_number %></td>
           </tr>
           <tr>
-            <td class="border px-1 py-2 whitespace-nowrap">住所</td>
-            <td class="border px-1 py-2"><%= @facility.address %></td>
+            <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">住所</td>
+            <td class="px-1 py-2 text-sm sm:text-lg"><%= @facility.address %></td>
           </tr>
           <tr>
-            <td class="border px-1 py-2 text-lg whitespace-nowrap">HP</td>
+            <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">HP</td>
             <% if @facility.web_site.present? %>
-              <td class="border px-1 py-2 custom-link"><%= link_to @facility.web_site, @facility.web_site %></td>
+              <td class="px-1 py-2 text-sm sm:text-lg custom-link break-all"><%= link_to @facility.web_site, @facility.web_site %></td>
             <% end %>
           </tr>
-          <% if @facility.remarks.present? %>
           <tr>
-            <td class="border px-1 py-2 whitespace-nowrap">備考</td>
-            <td class="border px-1 py-2"><%= @facility.remarks %></td>
-          </tr>
-          <% end %>
-          <tr>
-            <td class="border px-1 py-2 whitespace-nowrap">動物</td>
-            <td class="border px-1 py-2 flex animals-name">
+            <td class="pl-1 pr-5 py-2 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">動物</td>
+            <td class="px-1 py-2 flex animals-name leading-relaxed">
               <% @facility.animals.each do |animal| %>
                 <div class="m-2 animal-name">
                   <%= image_tag animal.icon, size: '50x50' %>
