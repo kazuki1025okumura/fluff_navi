@@ -30,6 +30,8 @@ body {
   background-position: center center;
   align-items: center;
   justify-content: center;
+  padding-top: 35%;
+  margin-top: -90px;
 
   @media screen and (max-width: 1000px) {
     background-image: image-url("top2.jpg");
@@ -68,7 +70,7 @@ body {
 
 .top-wrapper-animal {
   position: absolute;
-  bottom: 10vh;
+  bottom: 7vh;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -77,9 +79,4 @@ body {
 
 .animal-search-form {
   padding: 150px 0 10px 0;
-}
-
-header {
-  max-width: 570px;
-  margin: 0 auto;
 }
