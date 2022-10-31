@@ -1,39 +1,39 @@
 <div class="container pt-3 center mx-auto justify-center text-center">
   <div class="row">
-    <div class="flex max-auto justify-center">
-      <h3 class="text-5xl mr-2"><%= t('.title') %></h3>
+    <div class="flex max-auto justify-center items-center mb-8 sm:mb-10">
+      <b class="text-3xl sm:text-5xl mr-2 text-gray-600"><%= t('.title') %></b>
       <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-accent text-white' %>
     </div>
     <div class="avatar">
-      <div class="w-28 mask mask-squircle m-4">
+      <div class="w-28 mask mask-squircle my-6">
         <%= image_tag current_user.avatar.url %>
       </div>
     </div>
-    <div class="m-4">
-      <b>
+    <div class="my-6">
+      <b class="mb-2 text-lg">
         <%= t(User.human_attribute_name :name) %>
       </b>
-      <div>
+      <div class="text-gray-500">
         <%= current_user.name%>
       </div>
     </div>
-    <div class="m-4">
-      <b>
+    <div class="my-6">
+      <b class="mb-2 text-lg">
         <%= t(User.human_attribute_name :email) %>
       </b>
-      <div>
+      <div class="text-gray-500">
         <%= current_user.email %>
       </div>
     </div>
-    <div class="m-4">
-      <b>お気に入りの動物</b>
-      <div>
+    <div class="my-6">
+      <b class="mb-2 text-lg">お気に入りの動物</b>
+      <div class="text-gray-500">
         <%= current_user.animal.name if current_user.animal.present? %>
       </div>
     </div>
-    <div class="m-4">
-      <b>お気に入りのカテゴリー</b>
-      <div>
+    <div class="my-6">
+      <b class="mb-2 text-lg">お気に入りのカテゴリー</b>
+      <div class="text-gray-500">
         <%= current_user.category.name if current_user.category.present? %>
       </div>
     </div>

@@ -41,9 +41,14 @@
   color: rgb(46, 102, 255);
 }
 
+#post-button {
+  background-color: rgb(39, 169, 255);
+  border-color: rgb(39, 169, 255);
+}
+
 #post-button:hover {
-  background-color: rgb(11, 83, 217);
-  border-color: rgb(11, 83, 217);
+  background-color: rgb(20, 103, 255);
+  border-color: rgb(20, 103, 255);
 }
 
 #bm-button:hover {
@@ -157,8 +162,6 @@
       height: 20vw;
     }
   }
-
-
 }
 
 .show-facility-image {
@@ -221,5 +224,5 @@
 }
 
 .table-border tr {
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgb(224, 224, 224);
 }

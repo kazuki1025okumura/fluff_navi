@@ -24,11 +24,6 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
     <div id="flash-message">
       <%= render 'shared/flash_message' %>
     </div>

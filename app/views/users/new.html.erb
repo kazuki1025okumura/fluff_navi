@@ -30,7 +30,7 @@
             <div class="pt-5 pb-2 text-sm">
               <%= f.label :password %>
             </div>
-            <%= f.password_field :password, class: 'input input-bordered input-info w-full max-w-xs' %>
+            <%= f.password_field :password, placeholder: '半角英数字5文字以上', class: 'input input-bordered input-info w-full max-w-xs' %>
           </div>
           <div class="mb-4 flex-1">
             <div class="pt-5 pb-2 text-sm">
@@ -41,7 +41,7 @@
           <div class="flex items-center justify-between mt-8">
             <%= f.submit (t 'defaults.register'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
           </div>
-          <div class='text-center'>
+          <div class='text-center mt-3'>
             <%= link_to (t '.to_login_page'), login_path, class: 'text-indigo-400' %>
           </div>
         <% end %>

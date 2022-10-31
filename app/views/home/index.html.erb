@@ -1,12 +1,21 @@
 <div class="top-wrapper">
-  <div class="top-title-object">
-    <h1 class="top-title flex">FLUFF MAPS<%= image_tag 'top_animal_icon.png', size: '80', class: 'mx-3' %></h1>
-    <h2 class="top-message">動物とふれあえる施設を検索できるサービスです</h2>
+  <div class="align-top">
+    <% if logged_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
   </div>
-</div>
-<div class="top-wrapper-animal">
-  <div>
-    <%= render 'shared/search_form' %>
+  <div class="flex max-auto justify-center">
+    <div class="top-title-object">
+      <h1 class="top-title flex items-center justify-center">FLUFF MAPS<%= image_tag 'top_animal_icon.png', size: '80', class: 'mx-3' %></h1>
+      <h2 class="top-message flex items-center justify-center">動物とふれあえる施設を検索できるサービスです</h2>
+    </div>
+  </div>
+  <div class="top-wrapper-animal">
+    <div>
+      <%= render 'shared/search_form' %>
+    </div>
   </div>
 </div>
 <div>
@@ -14,11 +23,11 @@
     <%= render 'shared/animal_search' %>
   </div>
 </div>
-<div class="ml-4">
+<div class="ml-6 mb-3">
   <% if logged_in? %>
-    <p><%= current_user.name %>さんにオススメの施設</p>
+    <b class="text-xl sm:text-3xl"><%= current_user.name %>さんにオススメの施設</b>
   <% else %>
-    <p>FLUFF MAPSオススメの施設</p>
+    <b class="text-xl sm:text-3xl">FLUFF MAPSオススメの施設</b>
   <% end %>
 </div>
 <div>
@@ -32,6 +41,9 @@
     <% end %>
   <% end %>
 </div>
-<div id="home-post-image">
+<div class="ml-6 mt-20 sm:mt-40 mb-5">
+  <b class="text-xl sm:text-3xl">みんなの投稿</b>
+</div>
+<div id="home-post-image" class="mx-1">
   <%= render 'posts', posts: @posts %>
 </div>
