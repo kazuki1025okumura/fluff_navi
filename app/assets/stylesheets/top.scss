@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  background-color: rgb(251, 255, 255);
+  background-color: rgb(236, 249, 255);
   font-family: 'Noto Sans JP', sans-serif;
   color: #303030
 }
@@ -22,24 +22,16 @@ body {
 
 .top-wrapper {
   background-image: image-url("top2.jpg");
-  height: 800px;
-  max-width: 570px;
+  width: 100%;
+  height: 105vh;
   margin: 0 auto;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   align-items: center;
   justify-content: center;
-  padding-top: 35%;
-  margin-top: -90px;
-
-  @media screen and (max-width: 1000px) {
-    background-image: image-url("top2.jpg");
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+  padding-top: 42%;
+  margin-top: -145px;
 }
 
   .top-title-object {
@@ -70,7 +62,7 @@ body {
 
 .top-wrapper-animal {
   position: absolute;
-  bottom: 7vh;
+  bottom: 6vh;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;

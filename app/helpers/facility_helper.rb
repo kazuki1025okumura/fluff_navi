@@ -1,10 +1,11 @@
 module FacilityHelper
   def facility_image(facility)
-    if facility.posts.present?
-      image_tag facility.posts.first.image.url
-    else
-      select_image(facility)
-    end
+    select_image(facility)
+    # if facility.posts.present?
+    #   image_tag facility.posts.first.image.url
+    # else
+    #   select_image(facility)
+    # end
   end
 
   def select_image(facility)
