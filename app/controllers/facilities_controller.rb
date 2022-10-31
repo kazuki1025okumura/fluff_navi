@@ -38,7 +38,7 @@ class FacilitiesController < ApplicationController
   def set_center_of_bookmarks_map
     gon.center_lat = 35.509889
     gon.center_lng = 139.409462
-    gon.zoom_level = 9.6
+    gon.zoom_level = 8.7
   end
 
   def set_center_of_index_map
@@ -46,15 +46,15 @@ class FacilitiesController < ApplicationController
     when 1
       gon.center_lat = 35.698904
       gon.center_lng = 139.420081
-      gon.zoom_level = 9.9
+      gon.zoom_level = 9.3
     when 2
       gon.center_lat = 35.405050
       gon.center_lng = 139.367149
-      gon.zoom_level = 9.9
+      gon.zoom_level = 9.3
     else
       gon.center_lat = 35.509889
       gon.center_lng = 139.409462
-      gon.zoom_level = 9.6
+      gon.zoom_level = 8.7
     end
   end
 end

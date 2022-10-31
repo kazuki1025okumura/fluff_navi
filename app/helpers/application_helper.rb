@@ -17,7 +17,7 @@ module ApplicationHelper
       og: {
         site_name: :site,
         title: :title,
-        description: :desctiption,
+        description: :description,
         type: 'website',
         url: request.original_url,
         image: image_url('top.jpg'),

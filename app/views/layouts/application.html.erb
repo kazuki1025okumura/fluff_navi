@@ -24,16 +24,22 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
-    <div id="flash-message">
-      <%= render 'shared/flash_message' %>
+    <div class="max-w-screen-md grid sm:grid-cols-2 mx-auto">
+      <div class="sm:col-span-2 items-center">
+        <div class="mx-auto">
+          <% if logged_in? %>
+            <%= render 'shared/header' %>
+          <% else %>
+            <%= render 'shared/before_login_header' %>
+          <% end %>
+          <div id="flash-message">
+            <%= render 'shared/flash_message' %>
+          </div>
+          <%= yield %>
+          <%= render 'shared/footer' %>
+        </div>
+      </div>
     </div>
-    <%= yield %>
-    <%= render 'shared/footer' %>
   </body>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
 </html>

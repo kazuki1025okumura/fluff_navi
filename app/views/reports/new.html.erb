@@ -8,20 +8,20 @@
             <%= t('.title') %>
           </p>
           <div class="mb-4 flex-1">
-            <div class="pt-5 pb-3">
-              <%= f.label :content %>
+            <div class="pt-5 pb-3 font-medium">
+              <b class="flex justify-center"><%= f.label :content %><p>（必須）</p></b>
             </div>
             <%= f.select :content_id, Content.pluck(:name, :id), { include_blank: '項目を選択してください' }, class: 'select select-info text-center' %>
           </div>
           <div class="mb-4 flex-1">
-            <div class="pt-5 pb-3">
-              <%= f.label :body %>
+            <div class="pt-5 pb-3 font-medium">
+              <b class="flex justify-center"><%= f.label :body %><p>（必須）</p></b>
             </div>
-            <%= f.text_area :body, class: 'textarea textarea-info w-full' %>
+            <%= f.text_area :body, placeholder: '10文字以上で入力してください', class: 'textarea textarea-info w-full' %>
           </div>
           <div class="mb-4 flex-1">
-            <div class="pt-5 pb-3">
-              <%= f.label :image %>
+            <div class="pt-5 pb-3 font-medium">
+              <b class="flex justify-center"><%= f.label :image %><p>（任意）</p></b>
             </div>
             <%= f.file_field :image, onchange: 'previewImage()', class: 'form-control mb-3', accept: 'image/*' %>
             <%= f.hidden_field :image_cache %>

@@ -3,6 +3,6 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :facility
 
-  validates :title, length: { maximum: 60 }
+  validates :title, length: { maximum: 30 }
   validates :image, presence: true
 end
