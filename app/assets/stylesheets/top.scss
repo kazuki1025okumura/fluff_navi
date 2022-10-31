@@ -23,6 +23,8 @@ body {
 .top-wrapper {
   background-image: image-url("top2.jpg");
   height: 800px;
+  max-width: 570px;
+  margin: 0 auto;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -32,7 +34,7 @@ body {
   @media screen and (max-width: 1000px) {
     background-image: image-url("top2.jpg");
     width: 100%;
-    height: 800px;
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -64,18 +66,20 @@ body {
     }
   }
 
-top-wrapper-animal {
-  position: relative;
-  background-position: center;
-
-  // 動物から検索のモーダルの中の表示
-  .set-1.relative {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+.top-wrapper-animal {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 540px;
 }
 
 .animal-search-form {
   padding: 150px 0 10px 0;
+}
+
+header {
+  max-width: 570px;
+  margin: 0 auto;
 }

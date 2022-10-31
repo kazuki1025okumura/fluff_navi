@@ -1,11 +1,5 @@
 <div class="top-wrapper">
-  <div class="align-top">
-    <% if logged_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
-  </div>
+
   <div class="flex max-auto justify-center">
     <div class="top-title-object">
       <h1 class="top-title flex items-center justify-center">FLUFF MAPS<%= image_tag 'top_animal_icon.png', size: '80', class: 'mx-3' %></h1>
@@ -13,9 +7,7 @@
     </div>
   </div>
   <div class="top-wrapper-animal">
-    <div>
-      <%= render 'shared/search_form' %>
-    </div>
+    <%= render 'shared/search_form' %>
   </div>
 </div>
 <div>
