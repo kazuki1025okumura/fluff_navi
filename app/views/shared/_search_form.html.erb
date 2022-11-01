@@ -4,7 +4,7 @@
       <div class="m-4">
         <%= f.select :category_id, Category.pluck(:name, :id), { include_blank: '施設ジャンル' }, class: 'select select-info mb-2' %>
         <%= f.select :prefecture_id, Prefecture.pluck(:name, :id), { include_blank: '都道府県' }, class: 'select select-info mb-2' %>
-        <%= f.search_field :name, placeholder: '地名 施設名 キーワード', class: 'input input-bordered input-info' %>
+        <%# <%= f.search_field :name, placeholder: '地名 施設名 キーワード', class: 'input input-bordered input-info' %> 
       </div>
       <div class="text-center">
         <%= f.submit '検索', class: 'btn btn-sm btn-outline btn-info bg-gray-50' %>
