@@ -26,14 +26,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
-  width: calc(25% - 7px);
-  width: 80px;
-  margin: 2px;
+  width: calc(20% - 7px);
+  min-width: 35px;
+  margin: 4px;
 
   @media screen and (max-width: 530px) {
     width: calc(18% - 4px);
-    width: 30px;
-    margin: 5px;
+    min-width: 25px;
+    max-width: 27px;
+    margin: 3px;
   }
 }
 

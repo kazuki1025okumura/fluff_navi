@@ -20,13 +20,13 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('top.jpg'),
+        image: image_url('top3.jpg'),
         locale: 'ja_JP',
       },
       twitter: {
         card: 'summary_large_image',
         site: '@kazuki_okumura',
-        image: image_url('top.jpg'),
+        image: image_url('top3.jpg'),
       }
     }
   end
