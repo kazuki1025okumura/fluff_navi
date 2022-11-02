@@ -171,6 +171,15 @@
 
 .show-facility-image img {
   width: 100%;
+  height: 550px;
+  object-fit: cover;
+
+  @media screen and (max-width: 580px) {
+    height: 430px;
+  }
+  @media screen and (max-width: 440px) {
+    height: 300px;
+  }
 }
 
 .home-post-object {

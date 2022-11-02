@@ -2,23 +2,24 @@
   <div class="container flex items-center max-auto justify-center flex-1 h-full mx-auto">
     <div class="w-full max-w-lg">
       <div class="leading-loose text-center">
-        <%= form_with model: [@facility, @post], class: 'max-w-sm p-10 m-auto bg-white bg-opacity-25 rounded shadow-xl', local: true do |f| %>
+        <%= form_with model: [@facility, @post], class: 'max-w-sm p-10 m-auto bg-opacity-25 rounded', local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           <p class="mb-8 text-2xl font-light text-black">
             <%= t('.title') %>
           </p>
           <div class="mb-4 flex-1">
             <div class="pt-5 pb-3">
-              <%= f.label :title %>
+              <b><%= f.label :title %></b>
             </div>
             <%= f.text_area :title, placeholder: '30文字まで入力できます', class: 'input input-bordered input-info w-full max-w-xs' %>
           </div>
           <div class="mb-4 flex-1">
             <div class="pt-5 pb-3">
-              <%= f.label :image %>
-              <%= f.file_field :image, onchange: 'previewImage()', class: 'form-control mb-3', accept: 'image/*' %>
+              <div><b><%= f.label :image %></b></div>
+              <b class="text-red-500">※縦長の画像は中心から正方形にトリミングされます</b>
+              <%= f.file_field :image, onchange: 'previewImage()', class: 'form-control m-4', accept: 'image/*' %>
               <%= f.hidden_field :image_cache %>
-              <%= image_tag @post.image.url, class: 'w-full h-full object-cover object-center ', id: 'preview', size: '100x100' %>
+              <%= image_tag @post.image.url, class: 'w-full h-52 object-cover object-center sm:60', id: 'preview', size: '100x100' %>
             </div>
           </div>
           <div class="flex items-center justify-between mt-4">

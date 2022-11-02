@@ -52,6 +52,10 @@ body {
         height: 35px
       }
     }
+
+    @media screen and (max-width: 320px) {
+      font-size: 23px;
+    }
   }
 
   .top-message {
@@ -73,6 +77,6 @@ body {
   padding: 150px 0 10px 0;
 }
 
-.alert {
+.alert-flash.alert {
   position: absolute;
 }
