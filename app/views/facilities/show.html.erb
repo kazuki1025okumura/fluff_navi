@@ -22,7 +22,7 @@
     <% end %>
     <%= render 'shared/bookmark_button', { facility: @facility } %>
   </div>
-  <table class="table-fixed mb-8 font-light table-border">
+  <table class="mb-8 font-light table-border w-full">
     <tbody class="w-11/12 m-auto">
       <tr>
         <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">施設紹介</td>
@@ -49,7 +49,7 @@
       <tr>
         <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">HP</td>
         <% if @facility.web_site.present? %>
-          <td class="px-1 py-3 text-sm sm:text-lg custom-link break-all w-full max-w-full"><%= link_to @facility.web_site, @facility.web_site %></td>
+          <td class="px-1 py-3 text-sm sm:text-lg custom-link"><p><%= link_to truncate(@facility.web_site, length: 32), @facility.web_site %></p></td>
         <% end %>
       </tr>
       <tr>
@@ -75,4 +75,3 @@
   </div>
   <%= render 'shared/posts', posts: @facility.posts %>
 </div>
-

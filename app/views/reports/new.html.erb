@@ -1,8 +1,8 @@
-<div class="w-full h-screen font-sans bg-cover bg-landscape">
+<div class="w-full font-sans bg-cover bg-landscape mt-14">
   <div class="container flex items-center max-auto justify-center flex-1 h-full mx-auto">
     <div class="w-full">
       <div class="leading-loose text-center">
-        <%= form_with model: [@facility, @report], class: 'max-w-sm p-10 m-auto bg-white bg-opacity-25 rounded shadow-xl', local: true do |f| %>
+        <%= form_with model: [@facility, @report], class: 'max-w-sm p-10 m-auto rounded shadow-xl card-bg-color', local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           <p class="mb-8 text-2xl font-light text-black">
             <%= t('.title') %>
