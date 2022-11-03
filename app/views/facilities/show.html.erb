@@ -1,9 +1,9 @@
 <% set_meta_tags title: @facility.name, description: @facility.description, keywords: [@facility.prefecture.name, @facility.categories.pluck(:name).join(',')].join(',') %>
 <div class="mx-2">
-  <h1 class="mb-2 text-2xl sm:text-3xl font-extrabold leading-normal">
+  <h1 class="text-2xl sm:text-3xl font-extrabold leading-normal mt-16 mb-2 mx-2">
     <%= @facility.name %>
   </h1>
-  <h2 class="mb-5">
+  <h2>
     <% @facility.categories.each do |category| %>
       <span class="mx-1 badge badge-outline text-sm sm:text-base">
         <%= category.name %>
@@ -13,7 +13,7 @@
   <div>
     <div class="show-facility-image"><%= facility_image(@facility) %></div>
   </div>
-  <div class="flex max-auto justify-center m-6">
+  <div class="flex max-auto justify-center my-6">
     <%= link_to new_facility_report_path(@facility), class: 'btn !px-1 sm:!px-3 btn-accent bg-yellow-200 border-yellow-200 hover:bg-yellow-400 hover:border-yellow-400 text-gray-600 mr-1 sm:mr-4' do %>
       <span class="flex items-center text-xs sm:text-sm"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg><span class="ml-1">施設を報告する</span></span>
     <% end %>
