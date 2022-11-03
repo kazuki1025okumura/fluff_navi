@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  background-color: rgb(236, 249, 255);
+  background-color: rgb(239, 250, 255);
   font-family: 'Noto Sans JP', sans-serif;
   color: #303030
 }
@@ -77,6 +77,12 @@ body {
   padding: 150px 0 10px 0;
 }
 
-.alert-flash.alert {
+#flash-message {
   position: absolute;
+  width: 100%;
+  padding: 10px;
+}
+
+.card-bg-color {
+  background-color: rgb(247, 253, 255);
 }
