@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, success: t('.success')
+      login(user_params[:email], user_params[:password], params[:remember])
+      redirect_to root_path, success: t('.success')
     else
       flash.now[:error] = t('.error')
       render :new
