@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get 'concept', to: 'static_pages#concept'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
