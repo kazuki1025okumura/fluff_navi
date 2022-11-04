@@ -64,12 +64,14 @@
   <b class="text-xl sm:text-3xl ml-4"> 動物から探す</b>
   <div class="flex max-auto justify-center items-center animals-name mt-4">
     <% Animal.all.each do |animal| %>
+      <div class="btn-ghost">
         <%= link_to animal_facilities_path(id: animal.id) do %>
-          <div class="link-animal-name btn-ghost">
+          <div class="link-animal-name">
             <%= image_tag animal.icon, size: '50x50' %>
           </div>
           <div class="dummy-name"><%= animal.name %></div>
         <% end %>
+      </div>
     <% end %>
   </div>
 </div>
