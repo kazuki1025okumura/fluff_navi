@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  background-color: rgb(236, 249, 255);
+  background-color: rgb(245, 254, 255);
   font-family: 'Noto Sans JP', sans-serif;
-  color: #303030
+  color: #515151
 }
 
 .alert-success {
@@ -52,6 +52,10 @@ body {
         height: 35px
       }
     }
+
+    @media screen and (max-width: 320px) {
+      font-size: 23px;
+    }
   }
 
   .top-message {
@@ -73,6 +77,12 @@ body {
   padding: 150px 0 10px 0;
 }
 
-.alert {
+#flash-message {
   position: absolute;
+  width: 100%;
+  padding: 10px;
+}
+
+.card-bg-color {
+  background-color: rgb(250, 254, 255);
 }
