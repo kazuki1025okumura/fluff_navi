@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  background-color: rgb(245, 254, 255);
+  background-color: rgb(252, 252, 252);
   font-family: 'Noto Sans JP', sans-serif;
   color: #515151
 }
@@ -55,12 +55,6 @@ body {
 
     @media screen and (max-width: 320px) {
       font-size: 23px;
-    }
-  }
-
-  .top-message {
-    @media screen and (max-width: 550px) {
-      font-size: 20px;
     }
   }
 

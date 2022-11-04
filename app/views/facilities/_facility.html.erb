@@ -1,4 +1,4 @@
-<div class="card card-side bg-base-100 shadow-xl !mb-4">
+<div class="card card-side bg-facility-card shadow-xl !mb-4">
   <div class="card-body">
     <div class="flex">
       <h2 class="mr-2 sm:text-2xl"><b><%= facility.name %></b></h2>
@@ -27,7 +27,7 @@
       <div class="flex">
         <%= render 'shared/bookmark_button', facility: facility, class: 'whitespace-nowrap' %>
         <%= link_to facility_path(facility), data: { 'turbolinks': false } do %>
-          <button class="btn btn-primary whitespace-nowrap  ml-3">詳細を見る</button>
+          <button class="btn whitespace-nowrap ml-3 twitter-button">詳細を見る</button>
         <% end %>
       </div>
     </div>
