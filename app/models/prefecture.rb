@@ -1,5 +1,5 @@
 class Prefecture < ActiveHash::Base
   self.data = [
-    { id: 1, name: '東京都' }, { id: 2, name: '神奈川県' }
+    { id: 13, name: '東京都' }, { id: 14, name: '神奈川県' }
   ]
 end
