@@ -11,7 +11,7 @@ class Kanagawa < FetchFacility
 
   def csv_generate
     CSV.open(Rails.root.join('lib/csv/kanagawa.csv'), 'a', force_quotes: true) do |csv|
-      detailed_search(2, '神奈川 牧場', '神奈川 動物 ふれあい', '神奈川 動物カフェ').each do |d|
+      detailed_search(14, '神奈川 牧場', '神奈川 動物 ふれあい', '神奈川 動物カフェ').each do |d|
         csv << d
       end
     end

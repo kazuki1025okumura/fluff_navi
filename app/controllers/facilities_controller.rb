@@ -55,11 +55,11 @@ class FacilitiesController < ApplicationController
 
   def set_center_of_index_map
     case @search_form.prefecture_id
-    when 1
+    when 13
       gon.center_lat = 35.698904
       gon.center_lng = 139.420081
       gon.zoom_level = 9.3
-    when 2
+    when 14
       gon.center_lat = 35.405050
       gon.center_lng = 139.367149
       gon.zoom_level = 9.3
