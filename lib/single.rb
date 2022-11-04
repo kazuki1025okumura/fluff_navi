@@ -12,7 +12,7 @@ class Single < FetchSingle
   # 施設を単体で取得してcsvファイルに出力する
   def csv_generate
     CSV.open(Rails.root.join('lib/csv/tokyo.csv'), 'a', force_quotes: true) do |csv|
-      detailed_search(1, 'mipig 原宿店').each do |d|
+      detailed_search(13, 'mipig 原宿店').each do |d|
         csv << d
       end
     end
