@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  background-color: rgb(245, 254, 255);
+  background-color: rgb(252, 252, 252);
   font-family: 'Noto Sans JP', sans-serif;
   color: #515151
 }
@@ -30,8 +30,13 @@ body {
   background-position: center center;
   align-items: center;
   justify-content: center;
-  padding-top: 42%;
+  padding-top: 32%;
   margin-top: -145px;
+
+  @media screen and (max-width: 540px) {
+    padding-top: 42%;
+    margin-top: -145px;
+  }
 }
 
   .top-title-object {
@@ -43,11 +48,11 @@ body {
     font-family: 'Corben', cursive;
     font-size: 50px;
 
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 540px) {
       font-size: 35px;
     }
     img {
-      @media screen and (max-width: 550px) {
+      @media screen and (max-width: 540px) {
         width: 35px;
         height: 35px
       }
@@ -55,12 +60,6 @@ body {
 
     @media screen and (max-width: 320px) {
       font-size: 23px;
-    }
-  }
-
-  .top-message {
-    @media screen and (max-width: 550px) {
-      font-size: 20px;
     }
   }
 

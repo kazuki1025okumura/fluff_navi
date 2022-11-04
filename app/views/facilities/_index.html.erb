@@ -1,0 +1,15 @@
+<div class="mx-auto px-1 sm:px-1 max-w-3xl text-center mt-10">
+  <div class="mb-4">
+    <b class="text-2xl sm:text-4xl">
+      <%= t('.title') %>
+    </b>
+  </div>
+  <% if facilities.present? %>
+    <p class="text-xl sm:text-3xl mb-6"><b><%= facilities.length %></b> 件の施設が見つかりました</p>
+    <div id='map' class='mb-6'></div>
+    <%= render facilities %>
+  <% else %>
+    <p class="text-xl sm:text-2xl mb-6">施設が見つかりませんでした</p>
+  <% end %>
+</div>
+

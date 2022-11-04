@@ -38,6 +38,32 @@
   }
 }
 
+.link-animal-name {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  white-space: nowrap;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  width: calc(20% - 7px);
+  min-width: 48px;
+  margin: 6px 23px 0 23px;
+
+  @media screen and (max-width: 530px) {
+    width: calc(18% - 2px);
+    min-width: 38px;
+    max-width: 38px;
+    margin: 4px 18px 0 18px;
+  }
+}
+
+.dummy-name {
+  font-size: 1px;
+  opacity: 0;
+}
+
 .custom-link {
   color: rgb(46, 102, 255);
 }
@@ -235,4 +261,8 @@
 
 .table-border tr {
   border-top: 1px solid rgb(218, 218, 218);
+}
+
+.bg-facility-card {
+  background-color: rgb(232, 243, 249);
 }

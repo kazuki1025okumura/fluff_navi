@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     resources :reports, only: %i[new create], shallow: true
     collection do
       get :bookmarks
+      get :animal
+      get :category
     end
   end
   resources :bookmarks, only: %i[create destroy]

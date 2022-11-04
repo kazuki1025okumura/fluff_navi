@@ -1,7 +1,7 @@
 class FacilitiesController < ApplicationController
-  skip_before_action :require_login, only: %i[index show]
+  skip_before_action :require_login, only: %i[index show animal category]
   before_action :set_center_of_show_map, only: %i[show]
-  before_action :set_center_of_bookmarks_map, only: %i[bookmarks]
+  before_action :set_center_of_bookmarks_map, only: %i[bookmarks animal category]
 
   def index
     @search_form = SearchForm.new(search_params)
@@ -18,6 +18,18 @@ class FacilitiesController < ApplicationController
   def bookmarks
     @bookmark_facilities = current_user.facilities.includes(%i[facility_categories categories managements animals]).order(created_at: :desc)
     gon.facilities = @bookmark_facilities.as_json(include: :categories)
+  end
+
+  def animal
+    animal = Animal.find(params[:id])
+    @facilities = animal.facilities.includes(%i[facility_categories categories managements animals])
+    gon.facilities = @facilities.as_json(include: :categories)
+  end
+
+  def category
+    category = Category.find(params[:id])
+    @facilities = category.facilities.includes(%i[managements animals])
+    gon.facilities = @facilities.as_json(include: :categories)
   end
 
   private
