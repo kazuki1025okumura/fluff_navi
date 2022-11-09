@@ -1,9 +1,9 @@
 <div class="top-wrapper max-w-screen-md">
   <div class="flex max-auto justify-center">
     <div class="top-title-object">
-      <h1 class="top-title flex items-center justify-center">FLUFF MAPS<%= image_tag 'top_animal_icon.png', size: '80', class: 'mx-2' %></h1>
-      <h2 class="top-message flex items-center justify-center text-center mx-2 sm:mx-4 mt-5 sm:mt-8"><b>FLUFF MAPSは動物とふれあえる施設を検索できるサービスです</b></h2>
-      <h3 class="top-message flex items-center justify-center text-center mx-6 sm:mx-10 mt-6 sm:mt-8 text-sm sm:text-lg font-semibold">施設ジャンルや都道府県を選択してお気に入りの施設を探してみてください！</h3>
+      <span class="top-title flex items-center justify-center">FLUFF MAPS<%= image_tag 'top_animal_icon.png', size: '80', class: 'mx-2' %></span>
+      <h1 class="top-message flex items-center justify-center text-center mx-2 sm:mx-4 mt-5 sm:mt-8"><b>FLUFF MAPSは動物とふれあえる施設を検索できるサービスです</b></h1>
+      <h2 class="top-message flex items-center justify-center text-center mx-6 sm:mx-10 mt-6 sm:mt-8 text-sm sm:text-lg font-semibold">ジャンルや都道府県を選択してお気に入りの施設を探してみてください！</h2>
     </div>
   </div>
   <div class="top-wrapper-animal">
@@ -50,28 +50,4 @@
 <div id="home-post-image" class="mx-1">
   <%= render 'posts', posts: @posts %>
 </div>
-<div class="mt-16">
-  <b class="text-xl sm:text-3xl ml-4"> カテゴリーから探す</b>
-  <div class="flex max-auto justify-center items-center animals-name mx-2 mt-4">
-    <% Category.all.each do |category| %>
-      <%= link_to category_facilities_path(id: category.id) do %>
-        <p class="whitespace-nowrap badge badge-outline bg-blue-500 text-white text-sm sm:text-base m-2 p-4 btn-ghost"><%= category.name %></p>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-<div class="mt-16">
-  <b class="text-xl sm:text-3xl ml-4"> 動物から探す</b>
-  <div class="flex max-auto justify-center items-center animals-name mt-4">
-    <% Animal.all.each do |animal| %>
-      <div class="btn-ghost">
-        <%= link_to animal_facilities_path(id: animal.id) do %>
-          <div class="link-animal-name">
-            <%= image_tag animal.icon, size: '50x50' %>
-          </div>
-          <div class="dummy-name"><%= animal.name %></div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render 'shared/link_list' %>
