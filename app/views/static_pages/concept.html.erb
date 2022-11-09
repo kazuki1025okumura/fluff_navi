@@ -1,25 +1,43 @@
+<% set_meta_tags title: "このサービスについて" %>
 <div class="mx-5 mt-8">
   <h1 class="font-extrabold mb-5 text-center text-3xl">このアプリについて</h1>
   <div class="text-lg text-center leading-relaxed">
-    FLUFF MAPSをご利用いただきありがとうございます。<br>当アプリは動物とふれあえる施設を簡単に探すことを目的としたアプリケーションです。
+    <h2>FLUFF MAPSをご利用いただきありがとうございます。<br>当アプリは動物とふれあえる施設を簡単に探すことを目的としたアプリケーションです。</h2>
   </div>
-  <div class="font-semibold text-xl mb-1 mt-10">
+  <div class="font-semibold text-xl mb-1 mt-20">
     コンセプト
   </div>
   <div class="text-base ml-5 mb-1 leading-relaxed">
-    動物とふれあうことができる施設のみに特化したサービスです。
-    特に保護猫カフェなど動物の保護活動や保護動物の里親探しに力を入れている施設や酪農体験ができる牧場などを重点的に紹介しています。
-    <br>
+    <h2>
+      動物とふれあうことができる施設のみに特化したサービスです。
+      特に保護猫カフェなど動物の保護活動や保護動物の里親探しに力を入れている施設や酪農体験ができる牧場などを重点的に紹介しています。
+    </h2>
     <br>
     多くの人にとって動物とふれあうことは素敵な体験になると思っております。
     <br>
     このアプリを通じてたくさんの動物とふれあっていただいて楽しい時間を過ごしていただけたら幸いです。
   </div>
+  <div class="font-semibold text-xl mb-3 mt-14"><h2>このアプリの使い方</h2></div>
+  <div>
+    <div class="ml-3 text-lg font-semibold">・<h3>絞り込み検索</h3></div>
+    <p class="mx-3 mb-1 text-indigo-800">ジャンル、都道府県をどちらか、または両方選択して検索ボタンを押します</p>
+    <%= image_tag 'search.png' %>
+  </div>
+  <div>
+    <div class=" ml-3 text-lg font-semibold mt-10">・<h3>フリーワード検索</h3></div>
+    <p class="mx-3 mb-1 text-indigo-800">地名や動物名などの単語を入力して検査できます。単語複数入力することができます</p>
+    <%= image_tag 'keyword_search.png' %>
+  </div>
+  <div>
+    <div class=" ml-3 text-lg font-semibold mt-10">・<h3>ジャンルや動物をクリック</h3></div>
+    <p class="mx-3 mb-1 text-indigo-800">リンクをクリックすることで関連する施設を一覧で表示します</p>
+    <%= image_tag 'link.png' %>
+  </div>
   <div class="font-semibold text-2xl mb-1 mt-20">
     アプリ内で使用している写真の紹介🌈
   </div>
-  <div class="font-semibold text-xl mb-2 mt-10">
-    トップページ画像
+  <div class="font-semibold text-xl mb-2 mt-6">
+    トップページ メイン画像
   </div>
   <div class="text-base mb-1">
     <%= link_to 'https://twitter.com/Sorani___Ao?s=20&t=LiRG0HOgJL9jBA4uZawefQ', target: '_blank' do %>
