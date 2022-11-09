@@ -1,13 +1,13 @@
-<% set_meta_tags title: @facility.name, description: @facility.description, keywords: [@facility.prefecture.name, @facility.categories.pluck(:name).join(',')].join(',') %>
+<% set_meta_tags title: "#{@facility.name} | #{@facility.prefecture.name}で動物とのふれあい", description: @facility.description, keywords: [@facility.prefecture.name, @facility.categories.pluck(:name).join(',')].join(',') %>
 <div class="mx-2">
   <h1 class="text-2xl sm:text-3xl font-extrabold leading-normal mt-16 mb-2 mx-2">
-    <%= @facility.name %>
+    <p class="text-indigo-600 mb-2"><%= @facility.name %></p><%= "#{@facility.animals.pluck(:name).slice(0,3).join('や')}とふれあおう！営業時間などの詳細情報も紹介しています" %>
   </h1>
   <h2>
     <% @facility.categories.each do |category| %>
-      <span class="mx-1 badge badge-outline text-sm sm:text-base">
-        <%= category.name %>
-      </span>
+      <%= link_to category_facilities_path(id: category.id) do %>
+        <p class="mx-1 badge badge-outline bg-blue-100 text-gray-600 text-sm sm:text-base btn-ghost"><%= category.name %></p>
+      <% end %>
     <% end %>
   </h2>
   <div>
@@ -25,8 +25,31 @@
   <table class="mb-8 font-light table-border w-full">
     <tbody class="w-11/12 m-auto">
       <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">施設紹介</td>
+        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top"><h2>施設紹介</h2></td>
         <td class="px-1 py-3 text-sm sm:text-lg leading-relaxed"><%= @facility.description %></td>
+      </tr>
+      <tr>
+        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top"><h2>動物</h2></td>
+        <td class="px-1 pt-3 flex animals-name leading-relaxed items-center">
+          <% @facility.animals.each do |animal| %>
+            <%= link_to animal_facilities_path(id: animal.id) do %>
+              <div class="mx-2 animal-name btn-ghost">
+                <%= image_tag animal.icon, size: '50x50' %>
+              </div>
+              <div class="dummy-name p-0 m-0"><h3><%= animal.name %></h3></div>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">HP</td>
+        <% if @facility.web_site.present? %>
+          <td class="px-1 py-3 text-sm sm:text-lg custom-link"><p><%= link_to truncate(@facility.web_site, length: 32), @facility.web_site %></p></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">住所</td>
+        <td class="px-1 py-3 text-sm sm:text-lg"><%= @facility.address %></td>
       </tr>
       <% if @facility.opening_hours %>
         <tr>
@@ -42,26 +65,6 @@
         <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">電話番号</td>
         <td class="px-1 py-3 text-sm sm:text-lg underline"><%= @facility.tel_number %></td>
       </tr>
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">住所</td>
-        <td class="px-1 py-3 text-sm sm:text-lg"><%= @facility.address %></td>
-      </tr>
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">HP</td>
-        <% if @facility.web_site.present? %>
-          <td class="px-1 py-3 text-sm sm:text-lg custom-link"><p><%= link_to truncate(@facility.web_site, length: 32), @facility.web_site %></p></td>
-        <% end %>
-      </tr>
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">動物</td>
-        <td class="px-1 py-3 flex animals-name leading-relaxed">
-          <% @facility.animals.each do |animal| %>
-            <div class="m-2 animal-name">
-              <%= image_tag animal.icon, size: '50x50' %>
-            </div>
-          <% end %>
-        </td>
-      </tr>
     </tbody>
   </table>
   <div id="map" class="mx-auto justify-center"></div>
@@ -75,3 +78,4 @@
   </div>
   <%= render 'shared/posts', posts: @facility.posts %>
 </div>
+<%= render 'shared/link_list' %>
