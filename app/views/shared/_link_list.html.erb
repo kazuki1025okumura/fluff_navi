@@ -1,0 +1,25 @@
+<div class="mt-16">
+  <b class="text-xl sm:text-3xl ml-4">カテゴリーから探す</b>
+  <div class="flex max-auto justify-center items-center animals-name mx-2 mt-4">
+    <% Category.all.each do |category| %>
+      <%= link_to category_facilities_path(id: category.id) do %>
+        <p class="whitespace-nowrap badge badge-outline bg-blue-500 text-white text-sm sm:text-base m-2 p-3 btn-ghost"><%= category.name %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="mt-16">
+  <b class="text-xl sm:text-3xl ml-4">動物から探す</b>
+  <div class="flex max-auto justify-center items-center animals-name mt-4">
+    <% Animal.all.each do |animal| %>
+      <div class="btn-ghost">
+        <%= link_to animal_facilities_path(id: animal.id) do %>
+          <div class="link-animal-name">
+            <%= image_tag animal.icon, size: '50x50' %>
+          </div>
+          <div class="dummy-name"><%= animal.name %></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

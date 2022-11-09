@@ -21,14 +21,14 @@ class FacilitiesController < ApplicationController
   end
 
   def animal
-    animal = Animal.find(params[:id])
-    @facilities = animal.facilities.includes(%i[facility_categories categories managements animals])
+    @animal = Animal.find(params[:id])
+    @facilities = @animal.facilities.includes(%i[facility_categories categories managements animals])
     gon.facilities = @facilities.as_json(include: :categories)
   end
 
   def category
-    category = Category.find(params[:id])
-    @facilities = category.facilities.includes(%i[managements animals])
+    @category = Category.find(params[:id])
+    @facilities = @category.facilities.includes(%i[managements animals])
     gon.facilities = @facilities.as_json(include: :categories)
   end
 
