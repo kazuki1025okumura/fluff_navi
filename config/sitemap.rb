@@ -25,10 +25,22 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/articles'
     add root_path
-    add facilities_path, :priority => 0.7, :changefreq => 'daily'
+    add login_path, :priority => 0.4
+    add new_user_path, :priority => 0.4
+    add terms_of_service_path, :priority => 0.2
+    add privacy_policy_path, :priority => 0.2
+    add concept_path, :priority => 0.4
+
+    Animal.find_each do |animal|
+      add animal_facilities_path(id: animal.id), :priority => 0.8
+    end
+
+    Category.find_each do |category|
+      add category_facilities_path(id: category.id), :priority => 0.8
+    end
 
     Facility.find_each do |facility|
-      add facility_path(facility), :lastmod => facility.updated_at
+      add facility_path(facility), :priority => 0.9, :lastmod => facility.updated_at
     end
 end
 
