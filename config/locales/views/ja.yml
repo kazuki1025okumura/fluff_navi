@@ -35,7 +35,7 @@ ja:
       success: 'ログアウトしました'
   facilities:
     index:
-      title: '施設一覧'
+      title: '検索結果'
       no_result: '施設が見つかりませんでした'
     show:
       title: '施設詳細'
