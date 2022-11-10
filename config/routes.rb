@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       get :bookmarks
       get :animal
       get :category
+      get :all
     end
   end
   resources :bookmarks, only: %i[create destroy]

@@ -25,11 +25,12 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/articles'
     add root_path
+    all_facilities_path, :priority => 0.6
     add login_path, :priority => 0.4
     add new_user_path, :priority => 0.4
+    add concept_path, :priority => 0.4
     add terms_of_service_path, :priority => 0.2
     add privacy_policy_path, :priority => 0.2
-    add concept_path, :priority => 0.4
 
     Animal.find_each do |animal|
       add animal_facilities_path(id: animal.id), :priority => 0.8

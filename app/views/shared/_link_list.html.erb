@@ -8,7 +8,7 @@
     <% end %>
   </div>
 </div>
-<div class="mt-16">
+<div class="mt-16 mb-20">
   <b class="text-xl sm:text-3xl ml-4">動物から探す</b>
   <div class="flex max-auto justify-center items-center animals-name mt-4">
     <% Animal.all.each do |animal| %>
@@ -22,4 +22,10 @@
       </div>
     <% end %>
   </div>
+</div>
+<b class="text-xl sm:text-3xl ml-4">すべて見る</b>
+<div class="flex max-auto justify-center mt-12 sm:mt-16">
+  <%= link_to all_facilities_path do %>
+    <h3 class="btn twitter-button">全ての施設を表示</h3>
+  <% end %>
 </div>
