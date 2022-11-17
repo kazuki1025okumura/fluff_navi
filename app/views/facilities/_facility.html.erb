@@ -6,7 +6,9 @@
         <% end %>
       <div>
         <% facility.categories.each do |category| %>
-          <h3 class="whitespace-nowrap badge badge-outline text-xs sm:text-base sm:m-2"><%= category.name %></h3>
+          <%= link_to category_facilities_path(id: category.id) do %>
+            <h3 class="whitespace-nowrap badge badge-outline text-xs sm:text-base sm:m-2"><%= category.name %></h3>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -15,11 +17,13 @@
       <figure><span class="facility-image"><%= facility_image(facility) %></span></figure>
       <div>
         <b class="text-sm sm:text-base flex ml-2 mb-2"><h2>ふれあえる動物</h2></b>
-        <div class="animals-name ml-2 my-2">
+        <div class="animals-name ml-2 my-2 flex items-center">
           <% facility.animals.each do |animal| %>
-            <div class="animal-name my-1 ml-2">
-              <%= image_tag animal.icon, size: '40' %>
-            </div>
+            <%= link_to animal_facilities_path(id: animal.id) do %>
+              <div class="animal-name my-1 ml-2 btn-ghost">
+                <%= image_tag animal.icon, size: '40' %>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
