@@ -1,4 +1,4 @@
-<div class="top-wrapper max-w-screen-md">
+<div class="top-wrapper">
   <div class="flex max-auto justify-center">
     <div class="top-title-object">
       <span class="top-title flex items-center justify-center">FLUFF MAPS<%= image_tag 'top_animal_icon.png', size: '80', class: 'mx-2' %></span>
@@ -26,28 +26,30 @@
     <% end %>
   </div>
 </div>
-<div class="ml-6 mb-4 mt-16">
-  <% if logged_in? %>
-    <b class="text-xl sm:text-3xl"><p class="inline"><%= current_user.name %>さんにオススメの施設</p></b>
-  <% else %>
-    <b class="text-xl sm:text-3xl">FLUFF MAPSオススメの施設</b>
-  <% end %>
-</div>
-<div>
-  <% if logged_in? %>
-    <% current_user.suggest_to_login_user(current_user).each do |facility| %>
-      <%= render 'facilities/facility', facility: facility %>
+<div class="max-w-screen-md mx-auto">
+  <div class="ml-6 mb-4 mt-16">
+    <% if logged_in? %>
+      <b class="text-xl sm:text-3xl"><p class="inline"><%= current_user.name %>さんにオススメの施設</p></b>
+    <% else %>
+      <b class="text-xl sm:text-3xl">FLUFF MAPSオススメの施設</b>
     <% end %>
-  <% else %>
-    <% @facilities.each do |facility| %>
-      <%= render 'facilities/facility', facility: facility %>
+  </div>
+  <div>
+    <% if logged_in? %>
+      <% current_user.suggest_to_login_user(current_user).each do |facility| %>
+        <%= render 'facilities/facility', facility: facility %>
+      <% end %>
+    <% else %>
+      <% @facilities.each do |facility| %>
+        <%= render 'facilities/facility', facility: facility %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="ml-6 mt-20 sm:mt-40 mb-5">
+    <b class="text-xl sm:text-3xl"><h3>みんなの投稿</h3></b>
+  </div>
+  <div class="mx-1">
+    <%= render 'posts', posts: @posts %>
+  </div>
+  <%= render 'shared/link_list' %>
 </div>
-<div class="ml-6 mt-20 sm:mt-40 mb-5">
-  <b class="text-xl sm:text-3xl"><h3>みんなの投稿</h3></b>
-</div>
-<div class="mx-1">
-  <%= render 'posts', posts: @posts %>
-</div>
-<%= render 'shared/link_list' %>
