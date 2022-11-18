@@ -5,7 +5,7 @@ module ApplicationHelper
       title: '東京、神奈川で動物とのふれあいに特化した検索サービス',
       reverse: true,
       charset: 'utf-8',
-      description: 'FLUFF MAPSは動物とふれあうことができる施設を地域や動物名から簡単に探せるサービスです。',
+      description: 'FLUFF MAPSは動物とふれあうことができる施設を地域や動物名から簡単に探せるサービスです。動物カフェや牧場を探して動物とふれあいに出かけましょう！',
       keywords: '東京,神奈川,動物,ふれあい',
       canonical: request.original_url,
       separator: '|',
