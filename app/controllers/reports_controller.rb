@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  before_action :add_noindex_tag_to_response_headers, only: %i[new]
+
   def new
     @facility = Facility.find(params[:facility_id])
     @report = Report.new
