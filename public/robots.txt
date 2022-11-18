@@ -1,2 +1,1 @@
-Sitemap: https://www.fluff-maps.com/sitemap.xml
-Sitemap: https://www.fluff-maps.com/sitemap
+Sitemap: https://fluff-maps.s3.amazonaws.com/sitemaps/sitemap.xml.gz
