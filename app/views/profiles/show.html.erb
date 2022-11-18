@@ -1,63 +1,64 @@
-<div class="container pt-3 center mx-auto justify-center text-center mt-14">
-  <div class="row">
-    <div class="flex max-auto justify-center items-center mb-8 sm:mb-10">
-      <b class="text-3xl sm:text-5xl mr-2 text-gray-600"><%= t('.title') %></b>
-      <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-accent text-white' %>
-    </div>
-    <div class="avatar">
-      <div class="w-28 mask mask-squircle my-6">
-        <%= image_tag current_user.avatar.url %>
+
+  <div class="container pt-3 center mx-auto justify-center text-center mt-14">
+    <div class="row">
+      <div class="flex max-auto justify-center items-center mb-8 sm:mb-10">
+        <b class="text-3xl sm:text-5xl mr-2 text-gray-600"><%= t('.title') %></b>
+        <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-accent text-white' %>
       </div>
-    </div>
-    <div class="my-6">
-      <b class="mb-3 text-lg">
-        <%= t(User.human_attribute_name :name) %>
-      </b>
-      <div class="text-gray-500 mt-2">
-        <%= current_user.name%>
+      <div class="avatar">
+        <div class="w-28 mask mask-squircle my-6">
+          <%= image_tag current_user.avatar.url %>
+        </div>
       </div>
-    </div>
-    <div class="my-6">
-      <b class="mb-3 text-lg">
-        <%= t(User.human_attribute_name :email) %>
-      </b>
-      <div class="text-gray-500 mt-2">
-        <%= current_user.email %>
+      <div class="my-6">
+        <b class="mb-3 text-lg">
+          <%= t(User.human_attribute_name :name) %>
+        </b>
+        <div class="text-gray-500 mt-2">
+          <%= current_user.name%>
+        </div>
       </div>
-    </div>
-    <div class="my-6">
-      <b class="mb-3 text-lg">お気に入りの動物</b>
-      <div class="text-gray-500 mt-2">
-        <% if current_user.animal.present? %>
-          <%= current_user.animal.name %>
-        <% else %>
-          <p>設定されていません</p>
-        <% end %>
+      <div class="my-6">
+        <b class="mb-3 text-lg">
+          <%= t(User.human_attribute_name :email) %>
+        </b>
+        <div class="text-gray-500 mt-2">
+          <%= current_user.email %>
+        </div>
       </div>
-    </div>
-    <div class="mt-6 mb-14 sm:mb-20">
-      <b class="mb-3 text-lg">お気に入りのカテゴリー</b>
-      <div class="text-gray-500 mt-2">
-        <% if current_user.category.present? %>
-          <%= current_user.category.name %>
-        <% else %>
-          <p>設定されていません</p>
-        <% end %>
-      </div>
-    </div>
-    <b class="text-2xl sm:text-4xl">投稿写真</b>
-    <div class="w-full flex max-auto justify-center">
-      <hr size="1">
-      <div class="mt-12">
-        <% unless current_user.posts.present? %>
-          <b class="text-xl text-blue-900">まだ写真が投稿されていません<br>詳細ページから写真を投稿できます！↓</b>
-          <div class="mt-6"><b class="text-lg text-gray-600"><%= current_user.name %>さんにオススメの施設</b></div>
-          <% current_user.suggest_to_login_user(current_user).each do |facility| %>
-            <%= render 'facilities/facility', facility: facility %>
+      <div class="my-6">
+        <b class="mb-3 text-lg">お気に入りの動物</b>
+        <div class="text-gray-500 mt-2">
+          <% if current_user.animal.present? %>
+            <%= current_user.animal.name %>
+          <% else %>
+            <p>設定されていません</p>
           <% end %>
-        <% end %>
+        </div>
       </div>
+      <div class="mt-6 mb-14 sm:mb-20">
+        <b class="mb-3 text-lg">お気に入りのカテゴリー</b>
+        <div class="text-gray-500 mt-2">
+          <% if current_user.category.present? %>
+            <%= current_user.category.name %>
+          <% else %>
+            <p>設定されていません</p>
+          <% end %>
+        </div>
+      </div>
+      <b class="text-2xl sm:text-4xl">投稿写真</b>
+      <div class="w-full flex max-auto justify-center">
+        <hr size="1">
+        <div class="mt-12">
+          <% unless current_user.posts.present? %>
+            <b class="text-xl text-blue-900">まだ写真が投稿されていません<br>詳細ページから写真を投稿できます！↓</b>
+            <div class="mt-6"><b class="text-lg text-gray-600"><%= current_user.name %>さんにオススメの施設</b></div>
+            <% current_user.suggest_to_login_user(current_user).each do |facility| %>
+              <%= render 'facilities/facility', facility: facility %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <%= render 'posts', posts: @posts %>
     </div>
-    <%= render 'posts', posts: @posts %>
   </div>
-</div>

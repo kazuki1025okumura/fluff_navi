@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
+  before_action :add_noindex_tag_to_response_headers, only: %i[show edit]
 
   def show
     @posts = current_user.posts

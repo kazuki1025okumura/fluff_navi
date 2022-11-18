@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def not_authenticated
     redirect_to login_path, info: 'ログインしてください'
   end
+
+  def add_noindex_tag_to_response_headers
+    response.headers['X-Robots-Tag'] = 'noindex'
+  end
 end

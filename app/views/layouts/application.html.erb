@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    <div class="max-w-screen-md grid sm:grid-cols-2 mx-auto">
+    <div class="grid sm:grid-cols-2 mx-auto">
       <div class="sm:col-span-2 items-center">
         <div class="mx-auto">
           <% if logged_in? %>
@@ -32,12 +32,12 @@
           <% else %>
             <%= render 'shared/before_login_header' %>
           <% end %>
-          <div id="flash-message" class="max-w-screen-md">
+          <div id="flash-message" class="mx-auto">
             <%= render 'shared/flash_message' %>
           </div>
           <%= yield %>
-          <%= render 'shared/footer' %>
         </div>
+        <%= render 'shared/footer' %>
       </div>
     </div>
   </body>

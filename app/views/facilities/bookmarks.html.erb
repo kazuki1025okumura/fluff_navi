@@ -1,17 +1,19 @@
-<div class="mx-auto px-4 sm:px-8 max-w-3xl text-center mt-10">
-  <div class="mb-8">
-    <b class="text-2xl sm:text-4xl text-gray-700">
-      <%= t('.title') %>
-    </b>
+<div class="max-w-screen-md mx-auto">
+  <div class="mx-auto px-4 sm:px-8 max-w-3xl text-center mt-10">
+    <div class="mb-8">
+      <b class="text-2xl sm:text-4xl text-gray-700">
+        <%= t('.title') %>
+      </b>
+    </div>
+    <% if @bookmark_facilities.present? %>
+      <p class="text-xl sm:text-3xl text-gray-600 mb-6"><b><%= @bookmark_facilities.length %></b> 件の施設が登録されています</p>
+      <div id='map' class='mb-6'></div>
+      <%= render @bookmark_facilities %>
+    <% else %>
+      <p class="text-xl sm:text-2xl text-gray-600 mb-6"><%= t('.no_result') %></p>
+    <% end %>
   </div>
-  <% if @bookmark_facilities.present? %>
-    <p class="text-xl sm:text-3xl text-gray-600 mb-6"><b><%= @bookmark_facilities.length %></b> 件の施設が登録されています</p>
-    <div id='map' class='mb-6'></div>
-    <%= render @bookmark_facilities %>
-  <% else %>
-    <p class="text-xl sm:text-2xl text-gray-600 mb-6"><%= t('.no_result') %></p>
-  <% end %>
-</div>
-<div class="pt-10 sm:pt-20">
-  <%= render 'shared/link_list' %>
+  <div class="pt-10 sm:pt-20">
+    <%= render 'shared/link_list' %>
+  </div>
 </div>

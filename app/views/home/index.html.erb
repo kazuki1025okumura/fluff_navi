@@ -1,9 +1,9 @@
-<div class="top-wrapper max-w-screen-md">
+<div class="top-wrapper">
   <div class="flex max-auto justify-center">
     <div class="top-title-object">
       <span class="top-title flex items-center justify-center">FLUFF MAPS<%= image_tag 'top_animal_icon.png', size: '80', class: 'mx-2' %></span>
-      <h1 class="top-message flex items-center justify-center text-center mx-2 sm:mx-4 mt-5 sm:mt-8"><b>FLUFF MAPSは動物とふれあえる施設を検索できるサービスです</b></h1>
-      <h2 class="top-message flex items-center justify-center text-center mx-6 sm:mx-10 mt-6 sm:mt-8 text-sm sm:text-lg font-semibold">ジャンルや都道府県を選択してお気に入りの施設を探してみてください！</h2>
+      <div class="top-message flex items-center justify-center text-center mx-2 sm:mx-4 mt-5 sm:mt-8"><b><h1>FLUFF MAPSは動物とふれあえる施設を検索できるサービスです</h1></b></div>
+      <p class="top-message flex items-center justify-center text-center mx-6 sm:mx-10 mt-6 sm:mt-8 text-sm sm:text-lg font-semibold">ジャンルや都道府県を選択してお気に入りの施設を探してみてください！</p>
     </div>
   </div>
   <div class="top-wrapper-animal">
@@ -12,7 +12,7 @@
 </div>
 <div>
 <div class="mb-4 mt-14 text-center">
-  <b class="text-xl sm:text-3xl">キーワードから検索</b>
+  <b class="text-xl sm:text-3xl"><p class="inline">キーワードから検索</p></b>
 </div>
 <div class="w-full container mx-auto justify-center align-center max-w-xl">
   <div>
@@ -26,28 +26,30 @@
     <% end %>
   </div>
 </div>
-<div class="ml-6 mb-4 mt-16">
-  <% if logged_in? %>
-    <b class="text-xl sm:text-3xl"><%= current_user.name %>さんにオススメの施設</b>
-  <% else %>
-    <b class="text-xl sm:text-3xl">FLUFF MAPSオススメの施設</b>
-  <% end %>
-</div>
-<div>
-  <% if logged_in? %>
-    <% current_user.suggest_to_login_user(current_user).each do |facility| %>
-      <%= render 'facilities/facility', facility: facility %>
+<div class="max-w-screen-md mx-auto">
+  <div class="ml-6 mb-4 mt-16">
+    <% if logged_in? %>
+      <b class="text-xl sm:text-3xl"><p class="inline"><%= current_user.name %>さんにオススメの施設</p></b>
+    <% else %>
+      <b class="text-xl sm:text-3xl">FLUFF MAPSオススメの施設</b>
     <% end %>
-  <% else %>
-    <% @facilities.each do |facility| %>
-      <%= render 'facilities/facility', facility: facility %>
+  </div>
+  <div>
+    <% if logged_in? %>
+      <% current_user.suggest_to_login_user(current_user).each do |facility| %>
+        <%= render 'facilities/facility', facility: facility %>
+      <% end %>
+    <% else %>
+      <% @facilities.each do |facility| %>
+        <%= render 'facilities/facility', facility: facility %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="ml-6 mt-20 sm:mt-40 mb-5">
+    <b class="text-xl sm:text-3xl"><h3>みんなの投稿</h3></b>
+  </div>
+  <div class="mx-1">
+    <%= render 'posts', posts: @posts %>
+  </div>
+  <%= render 'shared/link_list' %>
 </div>
-<div class="ml-6 mt-20 sm:mt-40 mb-5">
-  <b class="text-xl sm:text-3xl">みんなの投稿</b>
-</div>
-<div id="home-post-image" class="mx-1">
-  <%= render 'posts', posts: @posts %>
-</div>
-<%= render 'shared/link_list' %>

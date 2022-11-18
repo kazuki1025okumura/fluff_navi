@@ -2,6 +2,7 @@ class FacilitiesController < ApplicationController
   skip_before_action :require_login, only: %i[index show animal category all]
   before_action :set_center_of_show_map, only: %i[show]
   before_action :set_center_of_bookmarks_map, only: %i[bookmarks animal category all]
+  before_action :add_noindex_tag_to_response_headers, only: %i[bookmarks]
 
   def index
     @search_form = SearchForm.new(search_params)

@@ -1,12 +1,14 @@
 <div class="post-content">
   <% posts.each do |post| %>
-    <div class="home-post-object">
-      <div class="home-post-image">
-        <%= image_tag post.image.url %>
-      </div>
-      <div class="text-blue-500 text-xs sm:text-sm md:text-base mt-1 sm:mt-2 btn-ghost">
-        <%= link_to post.facility.name, facility_path(post.facility.id) %>
-      </div>
+    <div class="home-post-object btn-ghost">
+      <%= link_to facility_path(post.facility.id) do %>
+        <div class="home-post-image">
+          <%= image_tag post.image.url %>
+        </div>
+        <div class="text-blue-500 text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
+          <p><%= post.facility.name %></p>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

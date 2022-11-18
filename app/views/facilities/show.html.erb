@@ -1,81 +1,81 @@
 <% set_meta_tags title: "#{@facility.name} | #{@facility.prefecture.name}で動物とのふれあい", description: @facility.description, keywords: [@facility.prefecture.name, @facility.categories.pluck(:name).join(',')].join(',') %>
-<div class="mx-2">
-  <h1 class="text-2xl sm:text-3xl font-extrabold leading-normal mt-16 mb-2 mx-2">
-    <p class="text-indigo-600 mb-2"><%= @facility.name %></p><%= "#{@facility.animals.pluck(:name).slice(0,3).join('や')}とふれあおう！営業時間などの詳細情報も紹介しています" %>
-  </h1>
-  <h2>
+<div class="max-w-screen-md mx-auto">
+  <div class="mx-2">
+    <h1 class="text-2xl sm:text-3xl font-extrabold leading-normal mt-16 mb-2 mx-2">
+      <div class="text-indigo-600 mb-2"><%= @facility.name %></div><%= "#{@facility.animals.pluck(:name).slice(0,3).join('や')}とふれあおう！営業時間などの詳細情報も紹介しています" %>
+    </h1>
     <% @facility.categories.each do |category| %>
       <%= link_to category_facilities_path(id: category.id) do %>
         <p class="mx-1 badge badge-outline bg-blue-100 text-gray-600 text-sm sm:text-base btn-ghost"><%= category.name %></p>
       <% end %>
     <% end %>
-  </h2>
-  <div>
-    <div class="show-facility-image"><%= facility_image(@facility) %></div>
-  </div>
-  <div class="flex max-auto justify-center my-6">
-    <%= link_to new_facility_report_path(@facility), class: 'btn !px-1 sm:!px-3 btn-accent bg-yellow-200 border-yellow-200 hover:bg-yellow-400 hover:border-yellow-400 text-gray-600 mr-1 sm:mr-4' do %>
-      <span class="flex items-center text-xs sm:text-sm"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg><span class="ml-1">施設を報告する</span></span>
-    <% end %>
-    <%= link_to new_facility_post_path(@facility), class: 'btn !px-1 sm:!px-3 btn-info text-white mr-1 sm:mr-4', id: 'post-button' do %>
-      <span class="flex items-center text-xs sm:text-sm"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg><span class="ml-1">写真を投稿する</span></span>
-    <% end %>
-    <%= render 'shared/bookmark_button', { facility: @facility } %>
-  </div>
-  <table class="mb-8 font-light table-border w-full">
-    <tbody class="w-11/12 m-auto">
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top"><h2>施設紹介</h2></td>
-        <td class="px-1 py-3 text-sm sm:text-lg leading-relaxed"><%= @facility.description %></td>
-      </tr>
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top"><h2>動物</h2></td>
-        <td class="px-1 pt-3 flex animals-name leading-relaxed items-center">
-          <% @facility.animals.each do |animal| %>
-            <%= link_to animal_facilities_path(id: animal.id) do %>
-              <div class="mx-2 animal-name btn-ghost">
-                <%= image_tag animal.icon, size: '50x50' %>
-              </div>
-              <div class="dummy-name p-0 m-0"><h3><%= animal.name %></h3></div>
-            <% end %>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">HP</td>
-        <% if @facility.web_site.present? %>
-          <td class="px-1 py-3 text-sm sm:text-lg custom-link"><p><%= link_to truncate(@facility.web_site, length: 32), @facility.web_site %></p></td>
-        <% end %>
-      </tr>
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">住所</td>
-        <td class="px-1 py-3 text-sm sm:text-lg"><%= @facility.address %></td>
-      </tr>
-      <% if @facility.opening_hours %>
+    <div>
+      <div class="show-facility-image"><%= facility_image(@facility) %></div>
+    </div>
+    <div class="flex max-auto justify-center my-6">
+      <%= link_to new_facility_report_path(@facility), class: 'btn !px-1 sm:!px-3 btn-accent bg-yellow-200 border-yellow-200 hover:bg-yellow-400 hover:border-yellow-400 text-gray-600 mr-1 sm:mr-4' do %>
+        <span class="flex items-center text-xs sm:text-sm"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg><span class="ml-1">施設を報告する</span></span>
+      <% end %>
+      <%= link_to new_facility_post_path(@facility), class: 'btn !px-1 sm:!px-3 btn-info text-white mr-1 sm:mr-4', id: 'post-button' do %>
+        <span class="flex items-center text-xs sm:text-sm"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg><span class="ml-1">写真を投稿する</span></span>
+      <% end %>
+      <%= render 'shared/bookmark_button', { facility: @facility } %>
+    </div>
+    <table class="mb-8 font-light table-border w-full">
+      <tbody class="w-11/12 m-auto">
         <tr>
-          <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">営業時間</td>
-          <td class="px-1 py-3 text-sm sm:text-lg leading-5">
-            <% @facility.opening_hours.split('.').each do |o| %>
-              <div><%= o %></div>
+          <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top"><h2>施設紹介</h2></td>
+          <td class="px-1 py-3 text-sm sm:text-lg leading-relaxed"><%= @facility.description %></td>
+        </tr>
+        <tr>
+          <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top"><h2>動物</h2></td>
+          <td class="px-1 pt-3 flex animals-name leading-relaxed items-center">
+            <% @facility.animals.each do |animal| %>
+              <%= link_to animal_facilities_path(id: animal.id) do %>
+                <div class="mx-2 animal-name btn-ghost">
+                  <%= image_tag animal.icon, size: '50x50' %>
+                </div>
+                <div class="dummy-name p-0 m-0"><div><%= animal.name %></div></div>
+              <% end %>
             <% end %>
           </td>
         </tr>
+        <tr>
+          <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">HP</td>
+          <% if @facility.web_site.present? %>
+            <td class="px-1 py-3 text-sm sm:text-lg custom-link"><p><%= link_to truncate(@facility.web_site, length: 32), @facility.web_site %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">住所</td>
+          <td class="px-1 py-3 text-sm sm:text-lg"><%= @facility.address %></td>
+        </tr>
+        <% if @facility.opening_hours %>
+          <tr>
+            <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">営業時間</td>
+            <td class="px-1 py-3 text-sm sm:text-lg leading-5">
+              <% @facility.opening_hours.split('.').each do |o| %>
+                <div><%= o %></div>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">電話番号</td>
+          <td class="px-1 py-3 text-sm sm:text-lg underline"><%= @facility.tel_number %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="map" class="mx-auto justify-center"></div>
+    <div class="flex justify-center max-auto my-3">
+      <%= link_to "https://twitter.com/share?&text=FLUFF%20MAPSで動物に会いに行こう！お気に入りの施設を見つけました↓%0a%0a#{@facility.name}%0a%23動物%20%23#{@facility.categories.present? ? @facility.categories.first.name : @facility.name}%0a&url=#{request.url}", title: 'Twitter', target: '_blank', class: 'btn twitter-button m-4 md:m-8' do %>
+        <span class="flex"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" fill="white"></path></svg><span class="ml-1">ツイッターで共有</span></span>
       <% end %>
-      <tr>
-        <td class="pl-1 pr-5 py-3 whitespace-nowrap text-sm sm:text-lg font-semibold align-top">電話番号</td>
-        <td class="px-1 py-3 text-sm sm:text-lg underline"><%= @facility.tel_number %></td>
-      </tr>
-    </tbody>
-  </table>
-  <div id="map" class="mx-auto justify-center"></div>
-  <div class="flex justify-center max-auto my-3">
-    <%= link_to "https://twitter.com/share?&text=FLUFF%20MAPSで動物に会いに行こう！お気に入りの施設を見つけました↓%0a%0a#{@facility.name}%0a%23動物%20%23#{@facility.categories.present? ? @facility.categories.first.name : @facility.name}%0a&url=#{request.url}", title: 'Twitter', target: '_blank', class: 'btn twitter-button m-4 md:m-8' do %>
-      <span class="flex"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" fill="white"></path></svg><span class="ml-1">ツイッターで共有</span></span>
-    <% end %>
-    <%= link_to "http://line.me/R/msg/text/?#{@facility.name}の詳細ページがシェアされました%0a#{request.url}%0a~FLUFF%20MAPS~", class: 'btn line-button m-4 md:m-8' do %>
-      <span class="flex"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-line" viewBox="0 0 16 16"> <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0ZM5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.154.154 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157Zm.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156h-.562Zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832a.17.17 0 0 0-.013-.015v-.001a.139.139 0 0 0-.01-.01l-.003-.003a.092.092 0 0 0-.011-.009h-.001L7.88 4.79l-.003-.002a.029.029 0 0 0-.005-.003l-.008-.005h-.002l-.003-.002-.01-.004-.004-.002a.093.093 0 0 0-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.154.154 0 0 0 .039.038l.001.001.01.006.004.002a.066.066 0 0 0 .008.004l.007.003.005.002a.168.168 0 0 0 .01.003h.003a.155.155 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156h-.561Zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.155.155 0 0 0-.108.044h-.001l-.001.002-.002.003a.155.155 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.155.155 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z" fill="white"></path></svg><span class="ml-1">LINEで共有</span></span>
-    <% end %>
+      <%= link_to "http://line.me/R/msg/text/?#{@facility.name}の詳細ページがシェアされました%0a#{request.url}%0a~FLUFF%20MAPS~", class: 'btn line-button m-4 md:m-8' do %>
+        <span class="flex"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-line" viewBox="0 0 16 16"> <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0ZM5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.154.154 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157Zm.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156h-.562Zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832a.17.17 0 0 0-.013-.015v-.001a.139.139 0 0 0-.01-.01l-.003-.003a.092.092 0 0 0-.011-.009h-.001L7.88 4.79l-.003-.002a.029.029 0 0 0-.005-.003l-.008-.005h-.002l-.003-.002-.01-.004-.004-.002a.093.093 0 0 0-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.154.154 0 0 0 .039.038l.001.001.01.006.004.002a.066.066 0 0 0 .008.004l.007.003.005.002a.168.168 0 0 0 .01.003h.003a.155.155 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156h-.561Zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.155.155 0 0 0-.108.044h-.001l-.001.002-.002.003a.155.155 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.155.155 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z" fill="white"></path></svg><span class="ml-1">LINEで共有</span></span>
+      <% end %>
+    </div>
+    <%= render 'shared/posts', posts: @facility.posts %>
   </div>
-  <%= render 'shared/posts', posts: @facility.posts %>
+  <%= render 'shared/link_list' %>
 </div>
-<%= render 'shared/link_list' %>

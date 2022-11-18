@@ -4,7 +4,7 @@
       <div class="leading-loose text-center">
         <%= form_with model: @user, url: password_reset_path(@token), class: 'max-w-sm p-10 m-auto rounded shadow-xl card-bg-color', local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
-          <p class="mb-8 text-3xl font-light text-black">
+          <p class="mb-8 text-3xl text-gray-900 font-bold">
             <%= t('.title') %>
           </p>
           <div class="mb-4 flex-1">

@@ -1,4 +1,5 @@
 class PasswordResetsController < ApplicationController
+  before_action :add_noindex_tag_to_response_headers, only: %i[new edit]
   skip_before_action :require_login
 
   def new; end

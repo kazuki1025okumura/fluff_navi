@@ -30,12 +30,18 @@ body {
   background-position: center center;
   align-items: center;
   justify-content: center;
-  padding-top: 32%;
-  margin-top: -145px;
+  padding-top: 18vw;
+  margin-top: -100px;
+
+  @media screen and (max-width: 800px) {
+    padding-top: 22vw;
+  }
+
+
 
   @media screen and (max-width: 540px) {
-    padding-top: 42%;
-    margin-top: -145px;
+    padding-top: 40%;
+    margin-top: -120px;
   }
 }
 
