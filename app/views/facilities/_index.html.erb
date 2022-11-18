@@ -1,13 +1,13 @@
 <div class="mx-auto px-1 max-w-3xl text-center mt-20 sm:mt-28">
   <div class="mb-4">
     <b class="text-xl sm:text-3xl">
-      <%= t('.title') %>
+      <h2><%= t('.title') %></h2>
     </b>
   </div>
   <% if facilities.present? %>
-    <h2 class="text-lg sm:text-2xl mb-10"><b class="text-yellow-600"><%= facilities.length %></b><span class="text-gray-500"> 件の施設が見つかりました</span></h2>
+    <p class="text-lg sm:text-2xl mb-10"><b class="text-yellow-600"><%= facilities.length %></b><span class="text-gray-500"> 件の施設が見つかりました</span></p>
     <div>
-      <b><h2 class="text-lg sm:text-2xl mb-2 mx-5 sm:mx-16 text-blue-800 leading-relaxed">ふれあうことができる動物の種類や施設の説明のほか、営業時間や住所などの情報も掲載しています</h2></b>
+      <b><p class="text-lg sm:text-2xl mb-2 mx-5 sm:mx-16 text-blue-800 leading-relaxed">ふれあうことができる動物の種類や施設の説明のほか、営業時間や住所などの情報も掲載しています</p></b>
     </div>
     <div id='map' class='mb-6'></div>
     <%= render facilities %>

@@ -1,5 +1,5 @@
 <div class="mt-16">
-  <b class="text-xl sm:text-3xl ml-4">カテゴリーから探す</b>
+  <b class="text-xl sm:text-3xl ml-4"><h3 class="inline">カテゴリーから探す</h3></b>
   <div class="flex max-auto justify-center items-center animals-name mx-2 mt-4">
     <% Category.all.each do |category| %>
       <%= link_to category_facilities_path(id: category.id) do %>
@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="mt-16 mb-20">
-  <b class="text-xl sm:text-3xl ml-4">動物から探す</b>
+  <b class="text-xl sm:text-3xl ml-4"><h3 class="inline">動物から探す</h3></b>
   <div class="flex max-auto justify-center items-center animals-name mt-4">
     <% Animal.all.each do |animal| %>
       <div class="btn-ghost">
@@ -17,15 +17,15 @@
           <div class="link-animal-name">
             <%= image_tag animal.icon, size: '50x50' %>
           </div>
-          <div class="dummy-name"><%= animal.name %></div>
+          <div class="dummy-name"><p><%= animal.name %></p></div>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
-<b class="text-xl sm:text-3xl ml-4">すべて見る</b>
+<b class="text-xl sm:text-3xl ml-4"><h3 class="inline">すべて見る</h3></b>
 <div class="flex max-auto justify-center mt-12 sm:mt-16">
   <%= link_to all_facilities_path do %>
-    <h3 class="btn twitter-button">全ての施設を表示</h3>
+    <p class="btn twitter-button">全ての施設を表示</p>
   <% end %>
 </div>

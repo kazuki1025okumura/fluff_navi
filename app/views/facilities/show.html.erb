@@ -1,11 +1,11 @@
 <% set_meta_tags title: "#{@facility.name} | #{@facility.prefecture.name}で動物とのふれあい", description: @facility.description, keywords: [@facility.prefecture.name, @facility.categories.pluck(:name).join(',')].join(',') %>
 <div class="mx-2">
   <h1 class="text-2xl sm:text-3xl font-extrabold leading-normal mt-16 mb-2 mx-2">
-    <p class="text-indigo-600 mb-2"><%= @facility.name %></p><%= "#{@facility.animals.pluck(:name).slice(0,3).join('や')}とふれあおう！営業時間などの詳細情報も紹介しています" %>
+    <div class="text-indigo-600 mb-2"><%= @facility.name %></div><%= "#{@facility.animals.pluck(:name).slice(0,3).join('や')}とふれあおう！営業時間などの詳細情報も紹介しています" %>
   </h1>
   <% @facility.categories.each do |category| %>
     <%= link_to category_facilities_path(id: category.id) do %>
-      <h2 class="mx-1 badge badge-outline bg-blue-100 text-gray-600 text-sm sm:text-base btn-ghost"><%= category.name %></h2>
+      <p class="mx-1 badge badge-outline bg-blue-100 text-gray-600 text-sm sm:text-base btn-ghost"><%= category.name %></p>
     <% end %>
   <% end %>
   <div>
@@ -34,7 +34,7 @@
               <div class="mx-2 animal-name btn-ghost">
                 <%= image_tag animal.icon, size: '50x50' %>
               </div>
-              <div class="dummy-name p-0 m-0"><h3><%= animal.name %></h3></div>
+              <div class="dummy-name p-0 m-0"><div><%= animal.name %></div></div>
             <% end %>
           <% end %>
         </td>

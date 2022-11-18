@@ -5,7 +5,7 @@
         <%= image_tag post.image.url %>
       </div>
       <div class="text-blue-500 text-xs sm:text-sm md:text-base mt-1 sm:mt-2 btn-ghost">
-        <%= link_to post.facility.name, facility_path(post.facility.id) %>
+        <p><%= link_to post.facility.name, facility_path(post.facility.id) %></p>
       </div>
     </div>
   <% end %>
