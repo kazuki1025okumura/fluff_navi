@@ -2,7 +2,7 @@
 <div class="bg-blue-500">
   <div class="w-full font-sans bg-cover bg-landscape">
     <div class="container flex items-center justify-center flex-1 h-full mx-auto">
-      <div class="w-full max-w-lg my-20">
+      <div class="w-full max-w-lg mt-20">
         <div class="leading-loose text-center">
           <%= form_with model: @user, class: 'max-w-sm p-10 m-auto rounded shadow-xl card-bg-color', local: true do |f| %>
             <div><b class="my-6 text-lg">SNSアカウントがある方は<br>こちらがオススメ↓</b></div>
@@ -41,12 +41,12 @@
             <div class="flex items-center justify-between mt-8">
               <%= f.submit (t 'defaults.register'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
             </div>
-            <div class='text-center mt-3'>
-              <%= link_to (t '.to_login_page'), login_path, class: 'text-indigo-400' %>
-            </div>
           <% end %>
         </div>
       </div>
+    </div>
+    <div class='text-center mt-10 pb-20'>
+      <%= link_to (t '.to_login_page'), login_path, class: 'text-white' %>
     </div>
   </div>
 </div>
