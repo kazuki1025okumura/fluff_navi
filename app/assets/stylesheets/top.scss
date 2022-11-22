@@ -91,3 +91,21 @@ body {
 .card-bg-color {
   background-color: rgb(250, 254, 255);
 }
+
+.hr-content {
+  border-top: 1px solid #ccc;
+  height: 1em;
+  text-align: center;
+  overflow: visible;
+}
+.hr-content::after {
+  content: "または";
+  background-color: rgb(250, 254, 255);
+  color:rgb(92, 92, 92);
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  top: -1em;
+  padding: 0 1em;
+}
