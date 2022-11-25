@@ -27,7 +27,7 @@
             <div class="pt-5 pb-3">
               <%= f.label :email %>
             </div>
-            <%= f.email_field :email, class: 'input input-bordered input-info w-full max-w-xs' %>
+            <%= f.text_field :email, class: 'input input-bordered input-info w-full max-w-xs' %>
           </div>
           <%= f.fields_for :favorite_animal, (current_user.favorite_animal || FavoriteAnimal.new) do |animal_form| %>
             <div class="mb-4 flex-1">
