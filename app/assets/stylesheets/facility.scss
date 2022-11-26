@@ -147,7 +147,7 @@
   height: auto;
   margin: 5px;
 
-  @media screen and (max-width: 765px) {
+  @media screen and (max-width: 700px) {
     width: calc(50% - 10px);
   }
 }
@@ -163,14 +163,14 @@
     object-fit: cover;
   }
 
-  @media screen and (max-width: 765px) {
+  @media screen and (max-width: 700px) {
     position: relative;
     font-size: 100%;
     vertical-align: baseline;
   
     img {
-      width: 280px;
-      height: 40vw;
+      width: 330px;
+      height: 42vw;
       object-fit: cover;
     }
   }
