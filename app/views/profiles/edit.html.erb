@@ -1,52 +1,58 @@
-<div class="w-full font-sans bg-cover bg-landscape">
+<div class="w-full font-sans bg-cover bg-landscape my-16">
   <div class="container flex items-center max-auto justify-center flex-1 h-full mx-auto">
-    <div class="w-full max-w-lg">
-      <div class="leading-loose text-center">
-        <%= form_with model: @user, url: profile_path, class: 'max-w-sm p-10 m-auto rounded shadow-xl card-bg-color', local: true do |f| %>
+    <div class="w-full max-w-2xl">
+      <div class="leading-loose">
+        <%= form_with model: @user, url: profile_path, class: 'p-10 m-auto rounded', local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
-          <b class="mb-8 text-2xl sm:text-4xl text-gray-600">
+          <p class="mb-12 py-2 text-2xl sm:text-3xl text-white text-center font-bold bg-info rounded">
             <%= t('.title') %>
-          </b>
-          <div class="my-4 flex-1">
-            <div class="pt-5 pb-3">
-              <p class="pb-3"><%= f.label :avatar %></p>
-              <%= f.file_field :avatar, onchange: 'previewImage(preview)', class: 'form-control mb-3', accept: 'image/*' %>
-              <div class='mt-3 mb-3 flex max-auto justify-center'>
-                <%= image_tag @user.avatar.url, class: 'rounded-circle', id: 'preview', size: '100x100' %>
+          </p>
+          <div class="mt-8 mb-1 flex-1">
+            <div class="pt-5">
+              <p class="pb-3 font-bold"><%= f.label :avatar %></p>
+              <div>
+                <%= f.file_field :avatar, onchange: 'previewImage(preview)', class: 'w-full rounded-lg border border-info p-2', accept: 'image/*' %>
+              </div>
+              <div class='flex max-auto justify-center'>
+                <%= image_tag @user.avatar.url, class: 'mask mask-circle w-28', id: 'preview' %>
               </div>
               <%= f.hidden_field :avatar_cache %>
             </div>
           </div>
           <div class="mb-4 flex-1">
-            <div class="pt-5 pb-3">
+            <div class="pb-3 font-bold">
               <%= f.label :name %>
             </div>
-            <%= f.text_field :name, class: 'input input-bordered input-info w-full max-w-xs' %>
+            <%= f.text_field :name, class: 'input input-bordered input-info w-full' %>
           </div>
           <div class="mb-4 flex-1">
-            <div class="pt-5 pb-3">
+            <div class="pt-5 pb-3 font-bold">
               <%= f.label :email %>
             </div>
-            <%= f.text_field :email, class: 'input input-bordered input-info w-full max-w-xs' %>
+            <%= f.text_field :email, class: 'input input-bordered input-info w-full' %>
           </div>
           <%= f.fields_for :favorite_animal, (current_user.favorite_animal || FavoriteAnimal.new) do |animal_form| %>
-            <div class="mb-4 flex-1">
-              <div class="pt-5 pb-3">
+            <div class="mb-4">
+              <div class="pt-5 pb-3 font-bold">
                 <%= animal_form.label :animal_id %>
               </div>
-              <%= animal_form.select :animal_id, Animal.pluck(:name, :id), { include_blank: '選択してください' }, class: 'select select-info w-full max-w-xs' %>
+              <div class="flex max-auto justify-center">
+                <%= animal_form.select :animal_id, Animal.pluck(:name, :id), { include_blank: '選択してください' }, class: 'select select-info w-full' %>
+              </div>
             </div>
           <% end %>
           <%= f.fields_for :favorite_category, (current_user.favorite_category || FavoriteCategory.new) do |category_form| %>
-            <div class="mb-4 flex-1">
-              <div class="pt-5 pb-3">
+            <div class="mb-4">
+              <div class="pt-5 pb-3 font-bold">
                 <%= category_form.label :category_id %>
               </div>
-              <%= category_form.select :category_id, Category.pluck(:name, :id), { include_blank: '選択してください' }, class: 'select select-info w-full max-w-xs' %>
+              <div class="flex max-auto justify-center">
+                <%= category_form.select :category_id, Category.pluck(:name, :id), { include_blank: '選択してください' }, class: 'select select-info w-full' %>
+              </div>
             </div>
           <% end %>
-          <div class="flex items-center justify-between mt-8">
-            <%= f.submit (t '.update'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
+          <div class="flex items-center justify-center mt-16">
+            <%= f.submit (t '.update'), type: 'submit', class: 'max-w-xs cursor-pointer py-2 px-4  bg-blue-600 hover:bg-indigo-900 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
           </div>
         <% end %>
       </div>
