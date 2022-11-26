@@ -4,7 +4,7 @@
       <div class="leading-loose">
         <%= form_with model: @user, url: profile_path, class: 'p-10 m-auto rounded', local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
-          <p class="mb-12 py-2 text-2xl sm:text-3xl text-white text-center font-bold bg-info rounded">
+          <p class="mb-12 py-2 text-2xl sm:text-3xl text-white text-center font-bold bg-info">
             <%= t('.title') %>
           </p>
           <div class="mt-8 mb-1 flex-1">
@@ -13,8 +13,8 @@
               <div>
                 <%= f.file_field :avatar, onchange: 'previewImage(preview)', class: 'w-full rounded-lg border border-info p-2', accept: 'image/*' %>
               </div>
-              <div class='flex max-auto justify-center'>
-                <%= image_tag @user.avatar.url, class: 'mask mask-circle w-28', id: 'preview' %>
+              <div class='flex max-auto justify-center mt-2'>
+                <%= image_tag @user.avatar.url, class: 'mask mask-circle w-28 profile-mask-w', id: 'preview' %>
               </div>
               <%= f.hidden_field :avatar_cache %>
             </div>
