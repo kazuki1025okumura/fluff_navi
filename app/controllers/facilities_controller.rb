@@ -49,30 +49,30 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     gon.center_lat = @facility.latitude
     gon.center_lng = @facility.longitude
-    gon.zoom_level = 15
+    gon.zoom_level = ZOOM_LEVEL_SHOW_MAP
   end
 
   # お気に入り一覧画面のマップの中心とズームレベル
   def set_center_of_bookmarks_map
-    gon.center_lat = 35.509889
-    gon.center_lng = 139.409462
-    gon.zoom_level = 8.7
+    gon.center_lat = LAT_INDEX_MAP
+    gon.center_lng = LNG_INDEX_MAP
+    gon.zoom_level = ZOOM_LEVEL_INDEX_MAP
   end
 
   def set_center_of_index_map
     case @search_form.prefecture_id
     when 13
-      gon.center_lat = 35.698904
-      gon.center_lng = 139.420081
-      gon.zoom_level = 9.3
+      gon.center_lat = LAT_TOKYO
+      gon.center_lng = LNG_TOKYO
+      gon.zoom_level = ZOOM_LEVEL_TOKYO
     when 14
-      gon.center_lat = 35.405050
-      gon.center_lng = 139.367149
-      gon.zoom_level = 9.3
+      gon.center_lat = LAT_KANAGAWA
+      gon.center_lng = LNG_KANAGAWA
+      gon.zoom_level = ZOOM_LEVEL_KANAGAWA
     else
-      gon.center_lat = 35.509889
-      gon.center_lng = 139.409462
-      gon.zoom_level = 8.7
+      gon.center_lat = LAT_INDEX_MAP
+      gon.center_lng = LNG_INDEX_MAP
+      gon.zoom_level = ZOOM_LEVEL_INDEX_MAP
     end
   end
 end
