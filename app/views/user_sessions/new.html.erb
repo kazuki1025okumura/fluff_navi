@@ -1,11 +1,11 @@
 <% set_meta_tags title: "ログイン" %>
-<div class="bg-blue-500">
+<div class="bg-white sm:bg-blue-500">
   <div class="w-full font-sans bg-cover bg-landscape">
     <div class="container flex items-center justify-center flex-1 h-full mx-auto">
       <div class="w-full max-w-lg mt-20">
         <div class="leading-loose">
-          <%= form_with url: login_path, class: 'max-w-sm p-10 m-auto rounded shadow-xl card-bg-color', local: true do |f| %>
-            <p class="mb-8 text-3xl font-bold text-center text-black">
+          <%= form_with url: login_path, class: 'max-w-sm p-10 m-auto bg-white', local: true do |f| %>
+            <p class="mb-8 text-3xl font-bold text-center">
               <%= t('.title') %>
             </p>
             <div><b class="my-6 text-lg flex max-auto justify-center text-center">SNSアカウントがある方は<br>こちらがオススメ↓</b></div>
@@ -36,10 +36,14 @@
             <div class="actions flex items-center justify-between mt-4">
               <%= f.submit (t 'defaults.login'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
             </div>
+            <hr class="hr-content my-14">
+            <%= link_to guest_login_path, class: 'btn btn-info text-white flex max-auto justify-center', method: 'post' do %>
+              <span>ゲストログイン</span>
+            <% end %>
           <% end %>
-          <div class='text-center flex max-auto justify-center mt-8'>
-            <%= link_to t('.to_register_page'), new_user_path, class: 'text-white m-4' %>
-            <%= link_to t('.password_forget'), new_password_reset_path, class: 'text-white m-4' %>
+          <div class='text-center sm:flex sm:max-auto sm:justify-center mt-8 block'>
+            <%= link_to t('.to_register_page'), new_user_path, class: 'sm:text-white text-gray-700 m-4 block' %>
+            <%= link_to t('.password_forget'), new_password_reset_path, class: 'sm:text-white text-gray-800 m-4 block' %>
           </div>
         </div>
       </div>
