@@ -12,7 +12,7 @@ class OauthsController < ApplicationController
       return
     end
     create_user_from(provider) unless (@user = login_from(provider))
-    redirect_to root_path, success: t('.success', item: provider.titleize)
+    redirect_back_or_to root_path, success: t('.success', item: provider.titleize)
   end
 
   private
