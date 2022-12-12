@@ -128,3 +128,18 @@ https://www.figma.com/file/utIO1lkRWOHriQEhteZ15g/%E3%83%9D%E3%83%BC%E3%83%88%E3
 - TwitterAPI（Twitterログイン）
 - GoogleMapsAPI
 - GooglePlacesAPI（施設データ取得）
+
+#### ツール
+
+- Googleアナリティクス (GA4)
+- Googleサーチコンソール
+- Google広告
+- キーワードプランナー （Google広告）
+
+
+<br>
+
+## 関連リンク
+
+#### サービス紹介記事
+https://qiita.com/kazuki1025okumura/items/c4f23d62a8d333b8be46
