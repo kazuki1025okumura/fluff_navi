@@ -92,3 +92,15 @@ body {
 .bg-pale-blue {
   background-color: #ecf6fc !important;
 }
+
+.line-height-normal {
+  line-height: normal;
+}
+
+.navbar-height {
+  height: 64px !important;
+
+  @media screen and (max-width: 640px) {
+    height: 50px !important;
+  }
+}
