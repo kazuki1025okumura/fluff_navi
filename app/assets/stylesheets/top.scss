@@ -37,8 +37,6 @@ body {
     padding-top: 30vw;
   }
 
-
-
   @media screen and (max-width: 540px) {
     padding-top: 50%;
     margin-top: -120px;
@@ -89,4 +87,20 @@ body {
 .profile-mask-w {
   min-width: 10rem;
   max-width: 10rem;
+}
+
+.bg-pale-blue {
+  background-color: #ecf6fc !important;
+}
+
+.line-height-normal {
+  line-height: normal;
+}
+
+.navbar-height {
+  height: 64px !important;
+
+  @media screen and (max-width: 640px) {
+    height: 50px !important;
+  }
 }

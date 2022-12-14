@@ -26,6 +26,6 @@ class UserSessionsController < ApplicationController
     random_name = SecureRandom.hex(5)
     user = User.create!(name: 'ゲストユーザー', email: "guest_#{random_name}@example.com", password: random_name, password_confirmation: random_name, role: :guest)
     auto_login(user)
-    redirect_to root_path, success: 'ゲストユーザーとしてログインしました'
+    redirect_back_or_to root_path, success: 'ゲストユーザーとしてログインしました'
   end
 end

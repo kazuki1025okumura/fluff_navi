@@ -1,0 +1,41 @@
+<div class="mb-16 sm:mb-24 mx-4">
+  <div class="mb-10 sm:mb-12 mt-24 sm:mt-32 text-center mx-4 sm:mx-8">
+    <b class="text-2xl sm:text-3xl flex max-auto justify-center"><h1 class="inline text-blue-700">施設を探す</h1><span class="flex items-center ml-1 pt-1"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg></span></b>
+  </div>
+  <div class="mb-5 text-center mx-4 sm:mx-8">
+    <b class="text-xl sm:text-2xl"><p class="inline">さまざまな<span class="inline-block">条件で</span><span class="inline-block">検索できます</span></p></b>
+  </div>
+  <div class="border border-blue-500 border-2 bg-pale-blue rounded-md mb-8 sm:mb-12 w-full container mx-auto justify-center align-center max-w-3xl">
+    <div class="mt-4 mb-6">
+      <%= render 'shared/keyword_search' %>
+    </div>
+  </div>
+  <div class="border border-blue-500 border-2 rounded-md mb-8 sm:mb-12 w-full container mx-auto justify-center align-center max-w-3xl">
+    <div class="my-4">
+      <div class="mb-4 text-center">
+        <b class="text-xl sm:text-3xl"><p class="inline"><span class="text-blue-500">動物の種類</span>で探す</p></b>
+      </div>
+      <div class="w-full container mx-auto justify-center align-center max-w-3xl">
+        <div>
+          <%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
+            <div class="m-4">
+              <%= f.select :animal_id, Animal.pluck(:name, :id), { include_blank: '動物を選択' }, class: 'select select-info mb-2' %>
+              <%= f.select :prefecture_id, Prefecture.pluck(:name, :id), { include_blank: '都道府県' }, class: 'select select-info mb-2' %>
+            </div>
+            <div class="text-center">
+              <%= f.submit '検索', class: 'btn btn-sm btn-outline btn-info bg-gray-50' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border border-blue-500 border-2 rounded-md mb-8 sm:mb-12 w-full container mx-auto justify-center align-center max-w-3xl">
+    <div class="my-4">
+      <div class="mb-4 text-center">
+        <b class="text-xl sm:text-3xl"><p class="inline"><span class="text-blue-500">ジャンル</span>で探す</p></b>
+      </div>
+        <%= render 'shared/search_form' %>
+    </div>
+  </div>
+</div>

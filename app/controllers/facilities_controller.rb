@@ -1,5 +1,5 @@
 class FacilitiesController < ApplicationController
-  skip_before_action :require_login, only: %i[index show animal category all]
+  skip_before_action :require_login, only: %i[index show animal category all search]
   before_action :set_center_of_show_map, only: %i[show]
   before_action :set_center_of_bookmarks_map, only: %i[bookmarks animal category all]
   before_action :add_noindex_tag_to_response_headers, only: %i[bookmarks]
@@ -37,6 +37,8 @@ class FacilitiesController < ApplicationController
     @facilities = Facility.all.includes(%i[facility_categories categories managements animals posts]).order(id: :desc)
     gon.facilities = @facilities.as_json(include: :categories)
   end
+
+  def search; end
 
   private
 

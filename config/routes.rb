@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       get :animal
       get :category
       get :all
+      get :search
     end
   end
   resources :bookmarks, only: %i[create destroy]

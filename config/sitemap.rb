@@ -25,6 +25,7 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/articles'
     add root_path
+    add search_facilities_path, :priority => 0.7
     add all_facilities_path, :priority => 0.6
     add login_path, :priority => 0.4
     add new_user_path, :priority => 0.4
