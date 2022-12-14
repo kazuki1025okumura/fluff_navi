@@ -1,0 +1,13 @@
+<div class="mb-4 text-center">
+  <b class="text-xl sm:text-3xl"><p class="inline"><span class="text-blue-500">キーワード</span>で探す</p></b>
+</div>
+<div class="w-full container mx-auto justify-center align-center max-w-xl">
+  <div>
+    <%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
+      <div class="flex mx-3">
+        <%= f.search_field :name, placeholder: '地名 施設名 キーワード', class: 'input input-bordered input-info mr-2' %>
+        <%= f.submit '検索', class: 'btn btn-outline btn-info bg-gray-50' %>
+      </div>
+    <% end %>
+  </div>
+</div>

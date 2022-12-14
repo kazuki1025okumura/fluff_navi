@@ -9,21 +9,8 @@
     <%= render 'shared/search_form' %>
   </div>
 </div>
-<div>
-<div class="mb-4 mt-14 text-center">
-  <b class="text-xl sm:text-3xl"><p class="inline">キーワードから検索</p></b>
-</div>
-<div class="w-full container mx-auto justify-center align-center max-w-xl">
-  <div>
-    <%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
-      <div class="m-4">
-        <%= f.search_field :name, placeholder: '地名 施設名 キーワード', class: 'input input-bordered input-info' %>
-      </div>
-      <div class="text-center">
-        <%= f.submit '検索', class: 'btn btn-sm btn-outline btn-info bg-gray-50' %>
-      </div>
-    <% end %>
-  </div>
+<div class="mt-14">
+  <%= render 'shared/keyword_search' %>
 </div>
 <div class="max-w-screen-md mx-auto">
   <div class="ml-6 mb-4 mt-16">
