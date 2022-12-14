@@ -35,4 +35,12 @@ module FacilityHelper
       image_tag 'no_image.jpg'
     end
   end
+
+  def bottom_navbar
+    if logged_in?
+      render 'shared/bottom_navbar'
+    else
+      render 'shared/before_login_bottom_navbar'
+    end
+  end
 end

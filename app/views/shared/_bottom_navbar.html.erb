@@ -1,0 +1,26 @@
+<div class="btm-nav bg-blue-500 md:px-16 lg:px-36 xl:px-72">
+  <div class="mx-10 hover:bg-blue-700">
+    <%= link_to bookmarks_facilities_path do %>
+      <button>
+        <span class="flex max-auto justify-center text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg></span>
+        <span class="text-xs sm:text-base text-white">お気に入り</span>
+      </button>
+    <% end %>
+  </div>
+  <div class="mx-10 hover:bg-blue-700">
+    <%= link_to root_path do %>
+        <button>
+        <span class="flex max-auto justify-center text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></span>
+        <span class="text-xs sm:text-base text-white">ホーム</span>
+      </button>
+    <% end %>
+  </div>
+  <div class="mx-10 hover:bg-blue-700">
+    <%= link_to search_facilities_path do %>
+      <button>
+        <span class="flex max-auto justify-center text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg></span>
+        <span class="text-xs sm:text-base text-white">検索</span>
+      </button>
+    <% end %>
+  </div>
+</div>
