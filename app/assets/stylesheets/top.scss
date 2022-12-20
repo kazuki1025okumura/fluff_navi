@@ -104,3 +104,13 @@ body {
     height: 50px !important;
   }
 }
+
+.bg-blue {
+  @media screen and (min-width: 1280px) {
+    background-color: rgb(23, 147, 255) !important;
+  }
+}
+
+#error_messages {
+  background-color: rgb(255, 212, 248) !important;
+}

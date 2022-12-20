@@ -3,10 +3,10 @@
     <div class="w-full">
       <div class="leading-loose text-center">
         <%= form_with model: [@facility, @report], class: 'max-w-sm p-10 m-auto rounded shadow-xl card-bg-color', local: true do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
           <p class="mb-8 text-2xl font-light text-black">
             <%= t('.title') %>
           </p>
+          <%= render 'shared/error_messages', object: f.object %>
           <div class="mb-4 flex-1">
             <div class="pt-5 pb-3 font-medium">
               <b class="flex justify-center"><%= f.label :content %><p>（必須）</p></b>

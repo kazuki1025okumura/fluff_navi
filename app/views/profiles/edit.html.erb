@@ -3,10 +3,10 @@
     <div class="w-full max-w-2xl">
       <div class="leading-loose">
         <%= form_with model: @user, url: profile_path, class: 'p-10 m-auto rounded', local: true do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
           <p class="mb-12 py-2 text-2xl sm:text-3xl text-white text-center font-bold bg-info">
             <%= t('.title') %>
           </p>
+          <%= render 'shared/error_messages', object: f.object %>
           <div class="mt-8 mb-1 flex-1">
             <div class="pt-5">
               <p class="pb-3 font-bold"><%= f.label :avatar %></p>
