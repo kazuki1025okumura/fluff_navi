@@ -1,28 +1,26 @@
 <% set_meta_tags title: "ログイン" %>
-<div class="bg-white sm:bg-blue-500">
+<div class="bg-white bg-blue">
   <div class="w-full font-sans bg-cover bg-landscape">
     <div class="container flex items-center justify-center flex-1 h-full mx-auto">
-      <div class="w-full max-w-lg mt-20">
+      <div class="w-full max-w-lg">
         <div class="leading-loose">
-          <%= form_with url: login_path, class: 'max-w-sm p-10 m-auto bg-white', local: true do |f| %>
-            <p class="mb-8 text-3xl font-bold text-center">
+          <%= form_with url: login_path, class: 'max-w-lg px-10 py-12 xl:mt-16 m-auto bg-white', local: true do |f| %>
+            <h1 class="mb-4 text-2xl font-bold text-center text-blue-900">
               <%= t('.title') %>
-            </p>
-            <div><b class="my-6 text-lg flex max-auto justify-center text-center">SNSアカウントがある方は<br>こちらがオススメ↓</b></div>
-            <%= link_to auth_at_provider_path(provider: :twitter), class: 'btn twitter-button flex' do %>
-              <span class="flex"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" fill="white"></path></svg><span class="ml-5">ツイッターでログイン</span></span>
-            <% end %>
-            <hr class="hr-content my-14 text-gray-400">
-            <b class="my-3 text-lg flex max-auto justify-center">
-              <%= t('.login_message') %>
-            </b>
-            <div class="mb-4 flex-1">
-              <%= f.email_field :email, value: params[:email], placeholder: 'メールアドレス', class: 'input input-bordered input-info w-full max-w-xs' %>
+            </h1>
+            <div class="pt-2 pb-2 text-sm">
+                <%= f.label 'メールアドレス' %>
             </div>
             <div class="mb-4 flex-1">
-              <%= f.password_field :password, value: params[:password], placeholder: 'パスワード', class: 'input input-bordered input-info w-full max-w-xs' %>
+              <%= f.email_field :email, value: params[:email], placeholder: 'ご登録いただいたメールアドレス', class: 'input input-bordered w-full' %>
             </div>
-            <div class="flex items-center mt-8">
+            <div class="pt-2 pb-2 text-sm">
+                <%= f.label 'パスワード' %>
+            </div>
+            <div class="mb-4 flex-1">
+              <%= f.password_field :password, value: params[:password], placeholder: '登録いただいたパスワード', class: 'input input-bordered w-full' %>
+            </div>
+            <div class="flex items-center mt-4">
               <div>
                 <%= check_box_tag :remember, params[:remember], true, class: 'mx-1' %>
               </div>
@@ -30,20 +28,25 @@
                 <%= label_tag t('.remember') %>
               </div>
             </div>
-            <div>
-              <p>時間が経ってもログイン状態を保てるようになります</p>
-            </div>
             <div class="actions flex items-center justify-between mt-4">
-              <%= f.submit (t 'defaults.login'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
+              <%= f.submit (t 'defaults.login'), type: 'submit', class: 'cursor-pointer py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg' %>
             </div>
-            <hr class="hr-content my-14">
+            <div class="text-center mt-2">
+              <%= link_to t('.password_forget'), new_password_reset_path, class: 'text-indigo-400' %>
+            </div>
+            <hr class="hr-content mt-14 mb-8 text-gray-400">
+            <div><b class="mb-4 text-lg flex max-auto justify-center text-center">SNSアカウントがある方はこちらがオススメ↓</b></div>
+            <%= link_to auth_at_provider_path(provider: :twitter), class: 'btn twitter-button flex' do %>
+              <span class="flex"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" fill="white"></path></svg><span class="ml-5">ツイッターでログイン</span></span>
+            <% end %>
+            <hr class="hr-content mt-14 mb-10 text-gray-400">
             <%= link_to guest_login_path, class: 'btn btn-info text-white flex max-auto justify-center', method: 'post' do %>
               <span>ゲストログイン</span>
             <% end %>
           <% end %>
-          <div class='text-center sm:flex sm:max-auto sm:justify-center mt-8 block'>
-            <%= link_to t('.to_register_page'), new_user_path, class: 'sm:text-white text-gray-700 m-4 block' %>
-            <%= link_to t('.password_forget'), new_password_reset_path, class: 'sm:text-white text-gray-800 m-4 block' %>
+          <div class='flex max-auto justify-center my-6'>
+            <span class="flex max-auto items-center xl:text-white text-indigo-900"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path></svg></span>
+            <span class="xl:text-white text-indigo-900 ml-1"><%= link_to t('.to_register_page'), new_user_path %></span>
           </div>
         </div>
       </div>
