@@ -1,5 +1,5 @@
 <div class="pt-3 mx-1 text-center mt-14 pb-10">
-  <div class="row max-w-3xl w-full mx-auto">
+  <div class="w-full mx-auto">
     <div class="flex max-auto justify-center items-center mb-8 sm:mb-10">
       <b class="text-3xl sm:text-5xl mr-2 text-gray-600"><%= t('.title') %></b>
       <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-accent text-white' %>
@@ -45,20 +45,26 @@
         <% end %>
       </div>
     </div>
-    <b class="text-2xl sm:text-4xl">投稿写真</b>
+    <b class="text-xl sm:text-3xl">投稿写真</b>
     <div class="w-full flex max-auto justify-center">
       <hr size="1">
-      <div class="mt-12">
+      <div class="mt-8">
         <% unless current_user.posts.present? %>
           <b class="text-xl text-blue-900">まだ写真が投稿されていません<br>詳細ページから写真を投稿できます！↓</b>
-          <div class="mt-6"><b class="text-lg text-gray-600"><%= current_user.name %>さんにオススメの施設</b></div>
-          <% current_user.suggest_to_login_user(current_user).each do |facility| %>
-            <%= render 'facilities/facility', facility: facility %>
-          <% end %>
+          <div class="mt-20"><b class="text-xl text-gray-600"><%= current_user.name %>さんにオススメの施設</b></div>
+          <div class="max-w-3xl">
+            <% current_user.suggest_to_login_user(current_user).each do |facility| %>
+              <%= render 'facilities/facility', facility: facility %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
-    <%= render 'posts', posts: @posts %>
+    <div class="flex max-auto justify-center">
+      <div class="max-w-4xl">
+        <%= render 'posts', posts: @posts %>
+      </div>
+    </div>
   </div>
 </div>
 <%= bottom_navbar %>
