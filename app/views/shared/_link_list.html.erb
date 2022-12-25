@@ -23,9 +23,14 @@
     <% end %>
   </div>
 </div>
-<b class="text-xl sm:text-3xl ml-4"><h3 class="inline">すべて見る</h3></b>
-<div class="flex max-auto justify-center mt-12 sm:mt-16 pb-20">
-  <%= link_to all_facilities_path do %>
-    <p class="btn twitter-button">全ての施設を表示</p>
-  <% end %>
+<div class="mb-20">
+  <b class="text-xl sm:text-3xl ml-4"><h3 class="inline">すべて見る</h3></b>
+  <div class="flex max-auto justify-center mt-12 sm:mt-16 pb-20">
+    <%= link_to all_facilities_path do %>
+      <p class="btn twitter-button">全ての施設を表示</p>
+    <% end %>
+  </div>
+</div>
+<div class="mb-16">
+  <%= render 'shared/keyword_search' %>
 </div>
