@@ -1,4 +1,4 @@
-class FetchSingle
+class FetchPhoto
   def detailed_search(prefecture, a)
     data = []
 
