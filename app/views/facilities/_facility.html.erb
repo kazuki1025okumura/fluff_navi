@@ -1,4 +1,4 @@
-<div class="card card-side bg-facility-card shadow-xl !mb-4">
+<div class="card card-side border border-2 border-blue-400 sm:mb-6">
   <div class="card-body">
     <div class="flex">
         <%= link_to facility_path(facility) do %>
@@ -12,12 +12,12 @@
         <% end %>
       </div>
     </div>
-    <p class="flex text-xs sm:text-sm text-gray-600"><%= facility.address %></p>
+    <p class="flex text-xs sm:text-sm text-gray-500"><%= facility.address %></p>
     <div class="flex mt-1">
       <figure><span class="facility-image"><%= facility_image(facility) %></span></figure>
       <div>
-        <b class="text-sm sm:text-base flex ml-2 mb-2"><div>ふれあえる動物</div></b>
-        <div class="animals-name ml-2 my-2 flex items-center">
+        <b class="text-sm sm:text-base flex ml-2 sm:ml-3 sm:mt-3 mb-2"><div>ふれあえる動物</div></b>
+        <div class="animals-name ml-2 sm:mt-4 my-2 flex items-center">
           <% facility.animals.each do |animal| %>
             <%= link_to animal_facilities_path(id: animal.id) do %>
               <div class="animal-name my-1 ml-2 btn-ghost">
