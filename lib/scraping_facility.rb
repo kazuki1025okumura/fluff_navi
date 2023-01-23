@@ -1,4 +1,4 @@
-class Facility < FetchFacility
+class ScrapingFacility < FetchFacility
   require 'uri'
   require 'net/http'
   require 'fetch_facility'
