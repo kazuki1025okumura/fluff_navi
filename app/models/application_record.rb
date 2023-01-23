@@ -7,10 +7,10 @@ class ApplicationRecord < ActiveRecord::Base
   def suggest_to_login_user(user)
     animal = user.animal
     category = user.category
-    hoge(animal, category)
+    get_facility_data(animal, category)
   end
 
-  def hoge(animal, category)
+  def get_facility_data(animal, category)
     facilities = Facility.limit(100).offset(rand(5))
     if !animal && !category
       facilities.where(suggest: 1).includes(%i[facility_categories categories managements animals]).sample(3)
