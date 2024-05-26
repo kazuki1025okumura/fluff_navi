@@ -29,5 +29,9 @@
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "webpack-dev-server": "^4.11.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "bundle exec rails s -p 3000"
   }
 }
