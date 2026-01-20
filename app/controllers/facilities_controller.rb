@@ -5,6 +5,7 @@ class FacilitiesController < ApplicationController
   before_action :add_noindex_tag_to_response_headers, only: %i[bookmarks]
 
   def index
+    # ロジックをコントローラーから切り出す
     @search_form = SearchForm.new(search_params)
     @facilities = @search_form.search.order(id: :desc)
     gon.facilities = @facilities.as_json(include: :categories)
