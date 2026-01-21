@@ -42,6 +42,7 @@ class FacilitiesController < ApplicationController
   def search; end
 
   private
+  # プライベートメソッドもロジックをコントローラーから切り出す
 
   def search_params
     params[:q]&.permit(:name, :description, :address, :prefecture_id, :category_id, :animal_id)
